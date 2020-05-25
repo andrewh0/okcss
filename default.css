@@ -191,7 +191,10 @@ canvas,
 audio,
 iframe,
 embed,
-object {
+object,
+input,
+select,
+textarea {
   display: block;
 }
 
@@ -291,11 +294,16 @@ ul,
 button,
 input,
 select,
-textarea
-/* input[type="submit"],
-input[type="button"],
-input[type="reset"], */
-/* input fields */ {
+textarea,
+/* other elements */
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
   margin-bottom: var(--space-4);
 }
 
@@ -353,7 +361,6 @@ legend {
 
 input,
 select {
-  display: block;
   padding: var(--space-2);
   background: var(--colors-background-0);
   border: var(--border-basic);
@@ -365,12 +372,6 @@ input:focus,
 select:focus,
 textarea:focus {
   border: var(--border-focus);
-}
-
-input:hover:not([disabled]):not(:focus):not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="range"]),
-select:hover:not([disabled]):not(:focus),
-textarea:hover:not([disabled]):not(:focus) {
-  border: var(--border-hover);
 }
 
 input::placeholder,
@@ -630,11 +631,6 @@ select:not([multiple]) {
   padding-right: 2.5em;
 }
 
-/* Hover style */
-select:not([multiple]):hover {
-  cursor: pointer;
-}
-
 /* Hide arrow icon in IE browsers */
 select::-ms-expand {
   display: none;
@@ -664,7 +660,6 @@ select[multiple]:disabled option {
 }
 
 textarea {
-  display: block;
   padding: var(--space-2);
   resize: vertical;
   background: var(--colors-background-0);
@@ -718,17 +713,6 @@ input[type="reset"] {
 
 input:not(:disabled)::-webkit-file-upload-button {
   cursor: pointer;
-}
-
-button:hover:not(:disabled),
-input[type="submit"]:hover:not(:disabled),
-input[type="button"]:hover:not(:disabled),
-input[type="reset"]:hover:not(:disabled) {
-  background-color: var(--colors-blue-5);
-}
-
-input:not(:disabled):hover::-webkit-file-upload-button {
-  background-color: var(--colors-blue-5);
 }
 
 button:disabled,
@@ -835,9 +819,7 @@ a {
   color: var(--colors-link);
   font-weight: var(--font-weight-button);
 }
-a:hover {
-  text-decoration: underline;
-}
+
 a:visited {
   color: var(--colors-link);
 }
@@ -901,14 +883,46 @@ abbr {
   cursor: help;
 }
 
+/* https://css-tricks.com/solving-sticky-hover-states-with-media-hover-hover/ */
+@media (hover: hover) {
+  a:hover {
+    text-decoration: underline;
+  }
+
+  input:hover:not([disabled]):not(:focus):not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="range"]),
+  select:hover:not([disabled]):not(:focus),
+  textarea:hover:not([disabled]):not(:focus) {
+    border: var(--border-hover);
+  }
+
+  select:not([multiple]):hover {
+    cursor: pointer;
+  }
+
+  button:hover:not(:disabled),
+  input[type="submit"]:hover:not(:disabled),
+  input[type="button"]:hover:not(:disabled),
+  input[type="reset"]:hover:not(:disabled) {
+    background-color: var(--colors-blue-5);
+  }
+
+  input:not(:disabled):hover::-webkit-file-upload-button {
+    background-color: var(--colors-blue-5);
+  }
+}
+
 /* TODO
 
 fix input outline (remove the native ring)
 
+fix last-child selectors (make sure it covers everything)
+- fix index.html test page to use div instead of p for select grouping
+
+remove range
+
 select has wrong colors
 select icon
 browser highlight
-Dark mode
 
 Use own colors
 Optimize
