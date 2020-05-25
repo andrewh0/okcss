@@ -251,7 +251,7 @@ small {
 }
 
 /* https://csswizardry.com/2012/06/single-direction-margin-declarations/ */
-/* Add bottom margin to all block-level elements */
+/* Add bottom margin to most block-level elements */
 /* https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements */
 
 address,
@@ -278,8 +278,7 @@ h6,
 header,
 hgroup,
 hr,
-/* li is a block element by default, but we ignore it */
-/* li, */
+/* li, ignored */
 main,
 nav,
 ol,
@@ -287,7 +286,16 @@ p,
 pre,
 section,
 table,
-ul {
+ul,
+/* buttons and inputs */
+button,
+input,
+select,
+textarea
+/* input[type="submit"],
+input[type="button"],
+input[type="reset"], */
+/* input fields */ {
   margin-bottom: var(--space-4);
 }
 
@@ -315,8 +323,6 @@ h6:last-child,
 header:last-child,
 hgroup:last-child,
 hr:last-child,
-/*  */
-/* li:last-child, */
 main:last-child,
 nav:last-child,
 ol:last-child,
@@ -324,7 +330,11 @@ p:last-child,
 pre:last-child,
 section:last-child,
 table:last-child,
-ul:last-child {
+ul:last-child,
+
+/* inputs */
+input[type="checkbox"],
+input[type="radio"] {
   margin-bottom: 0;
 }
 
@@ -349,7 +359,6 @@ select {
   border: var(--border-basic);
   border-radius: var(--border-radius-small);
   color: var(--colors-text-1);
-  -moz-appearance: none;
 }
 
 input:focus,
@@ -404,7 +413,8 @@ input::-ms-reveal {
   display: none;
 }
 
-input[disabled] {
+input[disabled],
+textarea[disabled] {
   background-color: var(--colors-background-inset);
 }
 
@@ -469,11 +479,9 @@ input[type="range"] {
   cursor: pointer;
   padding: 0;
   vertical-align: middle;
-}
-
-input[type="range"] {
   border: none;
   min-height: 2rem;
+  background-color: transparent;
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
@@ -571,22 +579,40 @@ input[type="range"]:focus:not(:disabled)::-ms-thumb {
   box-shadow: 0 0 0 0.125rem var(--colors-blue-3);
 }
 
-input[type="range"][disabled]::-webkit-slider-thumb {
-  background-color: var(--colors-gray-3);
-}
-input[type="range"][disabled]::-moz-range-thumb {
-  background-color: var(--colors-gray-3);
+input[type="range"]:disabled {
+  cursor: default;
 }
 
-input[type="range"][disabled]::-ms-thumb {
+input[type="range"]:disabled::-webkit-slider-runnable-track {
+  cursor: default;
+}
+
+input[type="range"]:disabled::-moz-range-track {
+  cursor: default;
+}
+
+input[type="range"]:disabled::-ms-track {
+  cursor: default;
+}
+
+input[type="range"]:disabled::-webkit-slider-thumb {
   background-color: var(--colors-gray-3);
+  cursor: default;
+}
+input[type="range"]:disabled::-moz-range-thumb {
+  background-color: var(--colors-gray-3);
+  cursor: default;
+}
+
+input[type="range"]:disabled::-ms-thumb {
+  background-color: var(--colors-gray-3);
+  cursor: default;
 }
 
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  margin: 0;
   outline: none;
   border: var(--border-basic);
   border-radius: var(--border-radius-small);
@@ -616,12 +642,17 @@ select::-ms-expand {
 
 /* Disabled styles */
 select:not([multiple]):disabled {
-  color: graytext;
   background-image: var(--select-caret-disabled);
+  background-color: var(--colors-background-inset);
+  cursor: default;
 }
 
 select[multiple] {
   border-radius: var(--border-radius-small);
+}
+
+select[multiple]:disabled {
+  background-color: var(--colors-background-inset);
 }
 
 textarea {
@@ -647,17 +678,48 @@ input[type="reset"] {
   border-radius: var(--border-radius-small);
   color: var(--colors-text-button);
   font-weight: var(--font-weight-button);
-  cursor: pointer;
   height: 2.5rem;
   border: none;
   padding: var(--space-2) var(--space-3);
   white-space: nowrap;
 }
 
-button:hover,
-input[type="submit"]:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover {
+input::-webkit-file-upload-button {
+  display: inline-block;
+  background-color: var(--colors-blue-4);
+  border-radius: var(--border-radius-small);
+  color: var(--colors-text-button);
+  font-weight: var(--font-weight-button);
+  height: 2.5rem;
+  border: none;
+  padding: var(--space-2) var(--space-3);
+  white-space: nowrap;
+}
+
+input:disabled::-webkit-file-upload-button {
+  cursor: default;
+  opacity: 0.5;
+}
+
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+  cursor: pointer;
+}
+
+input:not(:disabled)::-webkit-file-upload-button {
+  cursor: pointer;
+}
+
+button:hover:not(:disabled),
+input[type="submit"]:hover:not(:disabled),
+input[type="button"]:hover:not(:disabled),
+input[type="reset"]:hover:not(:disabled) {
+  background-color: var(--colors-blue-5);
+}
+
+input:not(:disabled):hover::-webkit-file-upload-button {
   background-color: var(--colors-blue-5);
 }
 
@@ -698,6 +760,7 @@ tr {
 }
 
 table caption {
+  padding: 0.5rem;
   font-weight: bold;
 }
 
@@ -835,6 +898,7 @@ abbr {
 fix input outline (remove the native ring)
 
 select has wrong colors
+select icon
 browser highlight
 Dark mode
 
@@ -848,7 +912,8 @@ accessibility audit
 
 file size audit
 
-Subtle animations for hover and focus
+don't do this: min-height: calc(2.5rem + 2px);
+
 
 
 A demo page with everything
