@@ -24,6 +24,7 @@
   --colors-gray-7: #444d56;
   --colors-gray-8: #2f363d;
   --colors-gray-9: #24292e;
+  --colors-gray-10: #111111;
 
   --colors-yellow-0: #fffdef;
   --colors-yellow-1: #fffbdd;
@@ -58,22 +59,9 @@
   --colors-orange-8: #c24e00;
   --colors-orange-9: #a04100;
 
-  /* --colors-primary: blue;
-  --colors-secondary: green;
-  --colors-accent: red;
-  --colors-muted: #777; */
-
   --line-height-body: 1.5;
   --line-height-heading: 1.5;
 
-  /* --font-size-0: 2.75rem;
-  --font-size-1: 2.25rem;
-  --font-size-2: 1.875rem;
-  --font-size-3: 1.5rem;
-  --font-size-4: 1.2rem;
-  --font-size-5: 1rem;
-  --font-size-6: 0.8rem;
-   */
   --font-size-0: 3rem;
   --font-size-1: 2.5rem;
   --font-size-2: 2rem;
@@ -90,46 +78,46 @@
   --space-5: 2rem; /* 32 */
   --space-6: 2.5rem; /* 40 */
 
-  --colors-accent: var(--colors-blue-5);
+  --colors-accent: var(--colors-blue-4);
+  --colors-accent-dim: var(--colors-blue-6);
 
-  --colors-text-code: #eb5757;
-  --colors-text-0: #050505;
-  --colors-text-1: #2f3037;
-  --colors-text-2: #525560;
-  --colors-text-3: #686b78;
-  --colors-text-button: #ffffff;
-  --colors-background-0: #fcfcfc;
-  --colors-background-1: #ffffff;
-  --colors-background-inset: #eff0f5;
+  --colors-text-code: #ea4a5a;
+
+  /* default */
+  --colors-text-primary: var(--colors-gray-10);
+  /* muted */
+  --colors-text-secondary: var(--colors-gray-5);
+  /* disabled, placeholder */
+  --colors-text-tertiary: var(--colors-gray-4);
+  /* inverted colors for light on dark */
+  --colors-text-primary-i: var(--colors-gray-0);
+  --colors-text-secondary-i: var(--colors-gray-3);
+  --colors-text-tertiary-i: var(--colors-gray-4);
+  --colors-background-0: var(--colors-gray-0);
+  --colors-background-1: var(--colors-gray-2);
+  --colors-background-2: var(--colors-gray-4);
   --border-basic: 1px solid var(--colors-gray-2);
-  --border-hover: 1px solid var(--colors-gray-4);
-  --border-focus: 1px solid var(--colors-blue-5);
-  --border-radius-small: 4px;
+  --border-active: 1px solid var(--colors-gray-3);
+  --border-radius-small: 0.25rem;
 
-  --baseline: 1rem;
-  --offset: 0;
-  --color: hsla(286, 100%, 53%, 0.5);
-  --select-caret: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24'%3E%3Cpath d='M24 24H0V0h24v24z' fill='none' opacity='.87'/%3E%3Cpath d='M15.88 9.29L12 13.17 8.12 9.29c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42 0z'/%3E%3C/svg%3E");
-  --select-caret-disabled: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24'%3E%3Cpath d='M24 24H0V0h24v24z' fill='none' opacity='.87'/%3E%3Cpath d='M15.88 9.29L12 13.17 8.12 9.29c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42 0z'/%3E%3C/svg%3E");
+  /* Icon from: https://material.io/resources/icons/?icon=arrow_drop_down&style=baseline */
+  /* uses --colors-gray-4 as the fill */
+  --select-caret: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24' fill='%23959da5'%3E%3Cpath d='M7 10l5 5 5-5z' /%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+  /* uses --colors-gray-3 as the fill */
+  --select-caret-disabled: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24' fill='%23d1d5da'%3E%3Cpath d='M7 10l5 5 5-5z' /%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --colors-accent: var(--colors-blue-5);
-
-    --colors-text-0: #fbfbfc;
-    --colors-text-1: #dedfe5;
-    --colors-text-2: #a9abb6;
-    --colors-text-3: #9094a6;
-
-    --colors-background-0: #050505;
-    --colors-background-1: #151617;
-    --colors-background-inset: var(--colors-gray-9);
+    --colors-accent: var(--colors-blue-4);
+    --colors-text-primary: var(--colors-gray-2);
+    --colors-text-secondary: var(--colors-gray-3);
+    --colors-text-tertiary: var(--colors-gray-4);
+    --colors-background-0: var(--colors-gray-10);
+    --colors-background-1: var(--colors-gray-9);
+    --colors-background-2: var(--colors-gray-7);
     --border-basic: 1px solid var(--colors-gray-6);
-    --border-hover: 1px solid var(--colors-gray-4);
-    --border-focus: 1px solid var(--colors-blue-5);
-    --select-caret: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24'%3E%3Cpath d='M24 24H0V0h24v24z' fill='none' opacity='.87'/%3E%3Cpath d='M15.88 9.29L12 13.17 8.12 9.29c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42 0z'/%3E%3C/svg%3E");
-    --select-caret-disabled: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24'%3E%3Cpath d='M24 24H0V0h24v24z' fill='none' opacity='.87'/%3E%3Cpath d='M15.88 9.29L12 13.17 8.12 9.29c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42 0z'/%3E%3C/svg%3E");
+    --border-active: 1px solid var(--colors-gray-4);
   }
 }
 
@@ -153,7 +141,7 @@ html {
   line-sizing: normal;
   line-height: var(--line-height-body);
   font-weight: var(--font-weight-body);
-  color: var(--colors-text-0);
+  color: var(--colors-text-primary);
   background-color: var(--colors-background-0);
 
   /* Make type rendering look crisper */
@@ -369,38 +357,38 @@ select {
   background: var(--colors-background-0);
   border: var(--border-basic);
   border-radius: var(--border-radius-small);
-  color: var(--colors-text-1);
+  color: var(--colors-text-primary);
 }
 
-input:focus,
-select:focus,
-textarea:focus {
-  border: var(--border-focus);
+input:disabled,
+select:disabled,
+textarea:disabled {
+  color: var(--colors-text-tertiary);
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: var(--colors-text-3);
+  color: var(--colors-text-tertiary);
 }
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: var(--colors-text-3);
+  color: var(--colors-text-tertiary);
 }
 
 input::-moz-placeholder,
 textarea::-moz-placeholder {
-  color: var(--colors-text-3);
+  color: var(--colors-text-tertiary);
 }
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: var(--colors-text-3);
+  color: var(--colors-text-tertiary);
 }
 
 input::-ms-input-placeholder,
 textarea::-ms-input-placeholder {
-  color: var(--colors-text-3);
+  color: var(--colors-text-tertiary);
 }
 
 /* There isn't good a way to remove the clear (x) button from the "date" and "time" input fields in Firefox without adding "required".
@@ -420,7 +408,7 @@ input::-ms-reveal {
 
 input[disabled],
 textarea[disabled] {
-  background-color: var(--colors-background-inset);
+  background-color: var(--colors-background-1);
 }
 
 input[type="number"] {
@@ -493,8 +481,11 @@ input[type="range"]::-webkit-slider-runnable-track {
   cursor: pointer;
   -webkit-appearance: none;
   border-radius: var(--border-radius-small);
-  background-color: var(--colors-gray-3);
-  background-image: linear-gradient(var(--colors-gray-3), var(--colors-gray-3));
+  background-color: var(--colors-background-1);
+  background-image: linear-gradient(
+    var(--colors-background-1),
+    var(--colors-background-1)
+  );
   width: 100%;
   height: 0.5rem;
   color: transparent;
@@ -506,8 +497,11 @@ input[type="range"]::-moz-range-track {
   cursor: pointer;
   -moz-appearance: none;
   border-radius: var(--border-radius-small);
-  background-color: var(--colors-gray-3);
-  background-image: linear-gradient(var(--colors-gray-3), var(--colors-gray-3));
+  background-color: var(--colors-background-1);
+  background-image: linear-gradient(
+    var(--colors-background-1),
+    var(--colors-background-1)
+  );
   width: 100%;
   height: 0.5rem;
   color: transparent;
@@ -518,8 +512,11 @@ input[type="range"]::-ms-track {
   cursor: pointer;
   -ms-appearance: none;
   border-radius: var(--border-radius-small);
-  background-color: var(--colors-gray-3);
-  background-image: linear-gradient(var(--colors-gray-3), var(--colors-gray-3));
+  background-color: var(--colors-background-1);
+  background-image: linear-gradient(
+    var(--colors-background-1),
+    var(--colors-background-1)
+  );
   width: 100%;
   height: 0.5rem;
   color: transparent;
@@ -534,7 +531,7 @@ input[type="range"]::-webkit-slider-thumb {
   cursor: pointer;
   -webkit-appearance: none;
   border-radius: 50%;
-  background-color: var(--colors-blue-4);
+  background-color: var(--colors-accent);
   width: 1.5rem;
   height: 1.5rem;
 
@@ -547,7 +544,7 @@ input[type="range"]::-moz-range-thumb {
   -moz-appearance: none;
   border: none;
   border-radius: 50%;
-  background-color: var(--colors-blue-4);
+  background-color: var(--colors-accent);
   width: 1.5rem;
   height: 1.5rem;
 }
@@ -555,33 +552,21 @@ input[type="range"]::-ms-thumb {
   cursor: pointer;
   -ms-appearance: none;
   border-radius: 50%;
-  background-color: var(--colors-blue-4);
+  background-color: var(--colors-accent);
   width: 1.5rem;
   height: 1.5rem;
 }
 
-input[type="range"]:active:not(:disabled)::-webkit-slider-thumb {
-  background-color: var(--colors-blue-5);
-}
-
-input[type="range"]:active:not(:disabled)::-moz-range-thumb {
-  background-color: var(--colors-blue-5);
-}
-
-input[type="range"]:active:not(:disabled)::-ms-thumb {
-  background-color: var(--colors-blue-5);
-}
-
 input[type="range"]:focus:not(:disabled)::-webkit-slider-thumb {
-  box-shadow: 0 0 0 0.125rem var(--colors-blue-3);
+  background-color: var(--colors-accent-dim);
 }
 
 input[type="range"]:focus:not(:disabled)::-moz-range-thumb {
-  box-shadow: 0 0 0 0.125rem var(--colors-blue-3);
+  background-color: var(--colors-accent-dim);
 }
 
 input[type="range"]:focus:not(:disabled)::-ms-thumb {
-  box-shadow: 0 0 0 0.125rem var(--colors-blue-3);
+  background-color: var(--colors-accent-dim);
 }
 
 input[type="range"]:disabled {
@@ -601,16 +586,16 @@ input[type="range"]:disabled::-ms-track {
 }
 
 input[type="range"]:disabled::-webkit-slider-thumb {
-  background-color: var(--colors-gray-3);
+  background-color: var(--colors-background-2);
   cursor: default;
 }
 input[type="range"]:disabled::-moz-range-thumb {
-  background-color: var(--colors-gray-3);
+  background-color: var(--colors-background-2);
   cursor: default;
 }
 
 input[type="range"]:disabled::-ms-thumb {
-  background-color: var(--colors-gray-3);
+  background-color: var(--colors-background-2);
   cursor: default;
 }
 
@@ -618,12 +603,11 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  outline: none;
   border: var(--border-basic);
   border-radius: var(--border-radius-small);
   background-color: var(--colors-background-0);
   min-height: calc(2.5rem + 2px);
-  color: var(--colors-text-1);
+  color: var(--colors-text-primary);
 }
 
 /* Adapted from https://codepen.io/chriscoyier/pen/zYYZaGP */
@@ -643,7 +627,7 @@ select::-ms-expand {
 /* Disabled styles */
 select:not([multiple]):disabled {
   background-image: var(--select-caret-disabled);
-  background-color: var(--colors-background-inset);
+  background-color: var(--colors-background-1);
   cursor: default;
 }
 
@@ -652,15 +636,15 @@ select[multiple] {
 }
 
 select[multiple]:disabled {
-  background-color: var(--colors-background-inset);
+  background-color: var(--colors-background-1);
 }
 
 select[multiple] option {
-  color: var(--colors-text-1);
+  color: var(--colors-text-);
 }
 
 select[multiple]:disabled option {
-  color: var(--colors-text-2);
+  color: var(--colors-text-tertiary);
 }
 
 textarea {
@@ -669,7 +653,7 @@ textarea {
   background: var(--colors-background-0);
   border: var(--border-basic);
   border-radius: var(--border-radius-small);
-  color: var(--colors-text-1);
+  color: var(--colors-text-primary);
   /* the 2px is for top and bottom borders */
   min-height: calc(2.5rem + 2px);
 }
@@ -681,9 +665,9 @@ input[type="submit"],
 input[type="button"],
 input[type="reset"] {
   display: inline-block;
-  background-color: var(--colors-blue-4);
+  background-color: var(--colors-accent);
   border-radius: var(--border-radius-small);
-  color: var(--colors-text-button);
+  color: var(--colors-text-primary-i);
   font-weight: var(--font-weight-button);
   height: 2.5rem;
   border: none;
@@ -693,9 +677,9 @@ input[type="reset"] {
 
 input::-webkit-file-upload-button {
   display: inline-block;
-  background-color: var(--colors-blue-4);
+  background-color: var(--colors-accent);
   border-radius: var(--border-radius-small);
-  color: var(--colors-text-button);
+  color: var(--colors-text-primary-i);
   font-weight: var(--font-weight-button);
   height: 2.5rem;
   border: none;
@@ -725,7 +709,18 @@ input[type="button"]:disabled,
 input[type="reset"]:disabled {
   cursor: default;
   opacity: 0.5;
-  background-color: var(--colors-blue-4);
+  background-color: var(--colors-accent);
+}
+
+button:focus:not(:disabled),
+input[type="submit"]:focus:not(:disabled),
+input[type="button"]:focus:not(:disabled),
+input[type="reset"]:focus:not(:disabled) {
+  background-color: var(--colors-accent-dim);
+}
+
+input:not(:disabled):focus::-webkit-file-upload-button {
+  background-color: var(--colors-accent-dim);
 }
 
 /* Tables */
@@ -738,10 +733,10 @@ table {
 
 thead tr,
 tfoot tr {
-  background-color: var(--colors-background-inset);
+  background-color: var(--colors-background-1);
   font-size: var(--font-size-6);
   text-transform: uppercase;
-  color: var(--colors-text-1);
+  color: var(--colors-text-primary);
 }
 
 td,
@@ -773,19 +768,19 @@ code,
 samp {
   font-family: var(--font-mono);
   line-height: var(--line-height-body);
-  background-color: var(--colors-background-inset);
+  background-color: var(--colors-background-1);
   border-radius: var(--border-radius-small);
 }
 
 pre {
   padding: var(--space-3);
-  color: var(--colors-text-1);
+  color: var(--colors-text-primary);
   white-space: pre-wrap;
 }
 
 var {
   font-family: var(--font-mono);
-  color: var(--colors-text-1);
+  color: var(--colors-text-primary);
   font-style: normal;
 }
 
@@ -809,13 +804,13 @@ code pre {
 }
 
 kbd {
-  background-color: var(--colors-gray-3);
+  background-color: var(--colors-background-1);
   border: var(--border-basic);
   border-radius: var(--border-radius-small);
-  border-bottom: 2px solid var(--colors-gray-4);
+  border-bottom: 2px solid var(--colors-background-2);
   padding: var(--space-1);
   font-family: var(--font-sans);
-  color: var(--colors-gray-8);
+  color: var(--colors-text-primary);
 }
 
 /* Links */
@@ -839,7 +834,7 @@ ol {
 
 time {
   font-size: var(--font-size-6);
-  color: var(--colors-text-2);
+  color: var(--colors-text-secondary);
 }
 
 mark {
@@ -858,7 +853,7 @@ hr {
 
 footer {
   font-size: var(--font-size-6);
-  color: var(--colors-text-1);
+  color: var(--colors-text-secondary);
 }
 
 blockquote {
@@ -866,7 +861,7 @@ blockquote {
   margin-left: 0;
   margin-right: 0;
   padding-left: var(--space-5);
-  color: var(--colors-text-1);
+  color: var(--colors-text-secondary);
 }
 
 blockquote::before {
@@ -876,7 +871,7 @@ blockquote::before {
   width: 4px;
   left: 0;
   border-radius: var(--border-radius-small);
-  background-color: var(--colors-text-3);
+  background-color: var(--colors-accent-dim);
 }
 
 dd {
@@ -897,10 +892,10 @@ abbr {
   input:hover:not([disabled]):not(:focus):not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="range"]),
   select:hover:not([disabled]):not(:focus),
   textarea:hover:not([disabled]):not(:focus) {
-    border: var(--border-hover);
+    border: var(--border-active);
   }
 
-  select:not([multiple]):hover {
+  select:not([multiple]):not(:disabled):hover {
     cursor: pointer;
   }
 
@@ -908,27 +903,21 @@ abbr {
   input[type="submit"]:hover:not(:disabled),
   input[type="button"]:hover:not(:disabled),
   input[type="reset"]:hover:not(:disabled) {
-    background-color: var(--colors-blue-5);
+    background-color: var(--colors-accent-dim);
   }
 
   input:not(:disabled):hover::-webkit-file-upload-button {
-    background-color: var(--colors-blue-5);
+    background-color: var(--colors-accent-dim);
   }
 }
 
 /* TODO
 
-Fix colors (use own)
-  - select icons need correct fills
-  - disabled input on night mode is bad contrast
-  - kbd is wrong on dark mode
-  - fix code on dark mode
-fix input outline (remove the native ring)
+Use own colors
+don't do this: min-height: calc(2.5rem + 2px);
 
 fix last-child selectors (make sure it covers everything)
 - fix index.html test page to use div instead of p for select grouping
-
-don't do this: min-height: calc(2.5rem + 2px);
 
 Wrap Up
   - Test
