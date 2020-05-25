@@ -58,10 +58,10 @@
   --colors-orange-8: #c24e00;
   --colors-orange-9: #a04100;
 
-  --colors-primary: blue;
+  /* --colors-primary: blue;
   --colors-secondary: green;
   --colors-accent: red;
-  --colors-muted: #777;
+  --colors-muted: #777; */
 
   --line-height-body: 1.5;
   --line-height-heading: 1.5;
@@ -90,7 +90,8 @@
   --space-5: 2rem; /* 32 */
   --space-6: 2.5rem; /* 40 */
 
-  --colors-link: var(--colors-blue-5);
+  --colors-accent: var(--colors-blue-5);
+
   --colors-text-code: #eb5757;
   --colors-text-0: #050505;
   --colors-text-1: #2f3037;
@@ -108,25 +109,27 @@
   --baseline: 1rem;
   --offset: 0;
   --color: hsla(286, 100%, 53%, 0.5);
-  --select-caret: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='32' viewBox='0 0 24 24' width='32'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
-  --select-caret-disabled: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='32' viewBox='0 0 24 24' width='32'%3E%3Cpath d='M7 10l5 5 5-5z' fill='%232f3037'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+  --select-caret: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24'%3E%3Cpath d='M24 24H0V0h24v24z' fill='none' opacity='.87'/%3E%3Cpath d='M15.88 9.29L12 13.17 8.12 9.29c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42 0z'/%3E%3C/svg%3E");
+  --select-caret-disabled: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24'%3E%3Cpath d='M24 24H0V0h24v24z' fill='none' opacity='.87'/%3E%3Cpath d='M15.88 9.29L12 13.17 8.12 9.29c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42 0z'/%3E%3C/svg%3E");
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --colors-accent: var(--colors-blue-5);
+
     --colors-text-0: #fbfbfc;
     --colors-text-1: #dedfe5;
     --colors-text-2: #a9abb6;
     --colors-text-3: #9094a6;
-    --colors-link: var(--colors-blue-4);
+
     --colors-background-0: #050505;
     --colors-background-1: #151617;
     --colors-background-inset: var(--colors-gray-9);
     --border-basic: 1px solid var(--colors-gray-6);
     --border-hover: 1px solid var(--colors-gray-4);
     --border-focus: 1px solid var(--colors-blue-5);
-    --select-caret: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='32' viewBox='0 0 24 24' width='32'%3E%3Cpath d='M7 10l5 5 5-5z' fill='white'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
-    --select-caret-disabled: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='32' viewBox='0 0 24 24' width='32'%3E%3Cpath d='M7 10l5 5 5-5z' fill='%23dedfe5'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+    --select-caret: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24'%3E%3Cpath d='M24 24H0V0h24v24z' fill='none' opacity='.87'/%3E%3Cpath d='M15.88 9.29L12 13.17 8.12 9.29c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42 0z'/%3E%3C/svg%3E");
+    --select-caret-disabled: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24'%3E%3Cpath d='M24 24H0V0h24v24z' fill='none' opacity='.87'/%3E%3Cpath d='M15.88 9.29L12 13.17 8.12 9.29c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42 0z'/%3E%3C/svg%3E");
   }
 }
 
@@ -233,6 +236,7 @@ h5 {
 h6 {
   font-size: var(--font-size-6);
   text-transform: uppercase;
+  font-weight: var(--font-weight-button);
 }
 
 h1,
@@ -354,7 +358,7 @@ fieldset {
   border-radius: var(--border-radius-small);
 }
 legend {
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-button);
   text-transform: uppercase;
   font-size: var(--font-size-6);
 }
@@ -752,8 +756,9 @@ tr {
 }
 
 table caption {
+  font-size: var(--font-size-4);
+  font-weight: var(--font-weight-heading);
   padding: 0.5rem;
-  font-weight: bold;
 }
 
 /* Code */
@@ -816,12 +821,12 @@ kbd {
 /* Links */
 a {
   text-decoration: none;
-  color: var(--colors-link);
+  color: var(--colors-accent);
   font-weight: var(--font-weight-button);
 }
 
 a:visited {
-  color: var(--colors-link);
+  color: var(--colors-accent);
 }
 
 /* Lists */
@@ -913,33 +918,22 @@ abbr {
 
 /* TODO
 
+Fix colors (use own)
+  - select icons need correct fills
+  - disabled input on night mode is bad contrast
+  - kbd is wrong on dark mode
+  - fix code on dark mode
 fix input outline (remove the native ring)
 
 fix last-child selectors (make sure it covers everything)
 - fix index.html test page to use div instead of p for select grouping
 
-remove range
-
-select has wrong colors
-select icon
-browser highlight
-
-Use own colors
-Optimize
-
-Lots of testing
-
-accessibility audit
-- disabled input on night mode is bad contrast
-
-file size audit
-
 don't do this: min-height: calc(2.5rem + 2px);
 
-
-
-A demo page with everything
-
-
+Wrap Up
+  - Test
+  - Optimize CSS
+  - accessibility audit
+  - file size audit
 
 */
