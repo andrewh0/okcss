@@ -655,6 +655,14 @@ select[multiple]:disabled {
   background-color: var(--colors-background-inset);
 }
 
+select[multiple] option {
+  color: var(--colors-text-1);
+}
+
+select[multiple]:disabled option {
+  color: var(--colors-text-2);
+}
+
 textarea {
   display: block;
   padding: var(--space-2);
