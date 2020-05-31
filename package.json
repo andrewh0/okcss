@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "build": "yarn run gulp"
+  },
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-cli": "^2.2.1",
+    "gulp-concat-css": "^3.1.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-rename": "^2.0.0"
+  }
+}
