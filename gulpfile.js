@@ -1,15 +1,13 @@
 const gulp = require("gulp");
-const autoprefixer = require("gulp-autoprefixer");
-const concatCss = require("gulp-concat-css");
 const csso = require("gulp-csso");
 const rename = require("gulp-rename");
+const autoprefixer = require("autoprefixer");
+const postcss = require("gulp-postcss");
 
-exports.default = () => {
+function buildCSS() {
   return gulp
-    .src("./src/normalize.css")
-    .pipe(gulp.src("./src/default.css"))
-    .pipe(autoprefixer())
-    .pipe(concatCss("combined.css"))
+    .src("./src/default.css")
+    .pipe(postcss([autoprefixer()]))
     .pipe(csso())
     .pipe(
       rename({
@@ -18,4 +16,6 @@ exports.default = () => {
       })
     )
     .pipe(gulp.dest("dist"));
-};
+}
+
+exports.default = buildCSS;
