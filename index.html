@@ -3,8 +3,8 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page title</title>
-    <link rel="stylesheet" href="./normalize.css" />
-    <link rel="stylesheet" href="./default.css" />
+    <!-- <link rel="stylesheet" href="./normalize.css" /> -->
+    <link rel="stylesheet" href="./dist/default.min.css" />
   </head>
   <body>
     <nav></nav>
@@ -463,7 +463,7 @@ p q r s t u v w x y z { | } ~ </pre
             <legend>Text inputs (disabled)</legend>
             <label for="i-d-email">Email</label>
             <input disabled type="email" name="i-d-email" id="i-d-email" />
-            <label for="password">Password</label>
+            <label for="i-d-password">Password</label>
             <input
               disabled
               type="password"
@@ -717,7 +717,13 @@ p q r s t u v w x y z { | } ~ </pre
           <header>
             <h2>IFrame</h2>
           </header>
-          <div><iframe src="index.html" height="300"></iframe></div>
+          <div>
+            <iframe
+              src="index.html"
+              height="300"
+              title="Embedded IFrame"
+            ></iframe>
+          </div>
           <footer>
             <p><a href="#top">[Top]</a></p>
           </footer>
