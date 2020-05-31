@@ -1,14 +1,14 @@
 const gulp = require("gulp");
-const csso = require("gulp-csso");
 const rename = require("gulp-rename");
-const autoprefixer = require("autoprefixer");
-const postcss = require("gulp-postcss");
 
-function buildCSS() {
-  return gulp
+const postcss = require("gulp-postcss");
+const autoprefixer = require("autoprefixer");
+const cssnano = require("cssnano");
+
+exports.default = () =>
+  gulp
     .src("./src/default.css")
-    .pipe(postcss([autoprefixer()]))
-    .pipe(csso())
+    .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(
       rename({
         basename: "default",
@@ -16,6 +16,3 @@ function buildCSS() {
       })
     )
     .pipe(gulp.dest("dist"));
-}
-
-exports.default = buildCSS;
