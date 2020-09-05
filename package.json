@@ -1,7 +1,8 @@
 {
   "license": "MIT",
   "scripts": {
-    "build": "yarn run gulp"
+    "build": "yarn run gulp",
+    "start": "yarn run serve ."
   },
   "dependencies": {
     "autoprefixer": "^9.8.0",
@@ -9,6 +10,7 @@
     "gulp": "^4.0.2",
     "gulp-cli": "^2.2.1",
     "gulp-postcss": "^8.0.0",
-    "gulp-rename": "^2.0.0"
+    "gulp-rename": "^2.0.0",
+    "serve": "^11.3.2"
   }
 }
