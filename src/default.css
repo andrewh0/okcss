@@ -86,6 +86,7 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
+  -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted; /* 2 */
 }
 
@@ -371,16 +372,16 @@ template {
   /* bold */
   --ok-fw-2: 700;
   /* headings */
-  --ok-fw-3: 800;
+  --ok-fw-3: 700;
 
   /* font-size */
-  --ok-fs-0: 3rem;
-  --ok-fs-1: 2.5rem;
-  --ok-fs-2: 2rem;
-  --ok-fs-3: 1.5rem;
-  --ok-fs-4: 1.25rem;
-  --ok-fs-5: 1rem;
-  --ok-fs-6: 0.75rem;
+  --ok-fs-0: 3rem; /* 48 */
+  --ok-fs-1: 2.5rem; /* 40 */
+  --ok-fs-2: 2rem; /* 32 */
+  --ok-fs-3: 1.5rem; /* 24 */
+  --ok-fs-4: 1.25rem; /* 20 */
+  --ok-fs-5: 1rem; /* 16 */
+  --ok-fs-6: 0.75rem; /* 12 */
 
   /* border-radius */
   --ok-br: 0.25rem;
@@ -414,31 +415,33 @@ template {
   /* ================================== */
 
   --ok-lh-body: 1.5;
-  --ok-lh-heading: 1.5;
+  --ok-lh-heading: 1.25;
 
-  --ok-accent: var(--ok-blue-5);
+  --ok-accent: #2463ca;
   --ok-accent-dim: var(--ok-blue-6);
 
-  --ok-tc-code: #dc0323;
+  --ok-tc-code: #eb5757;
   --ok-t-hl: #deb400;
 
   /* default text color */
-  --ok-tc-0: var(--ok-gray-9);
-  /* muted */
-  --ok-tc-1: var(--ok-gray-5);
-  /* disabled, placeholder */
-  --ok-tc-2: var(--ok-gray-4);
   /* inverted colors for light on dark */
   --ok-tc-0-i: var(--ok-gray-0);
 
+  --ok-tc-0: #000;
+  /* muted */
+  --ok-tc-1: #747474;
+  /* disabled, placeholder */
+  --ok-tc-2: #848484;
+
   /* background color */
-  --ok-bg-0: var(--ok-gray-0);
-  --ok-bg-1: var(--ok-gray-1);
-  --ok-bg-2: var(--ok-gray-4);
+  --ok-bg-0: #fff;
+  --ok-bg-1: #e5e5e5;
+  /* BG accent */
+  --ok-bg-2: #8f8f8f;
 
   /* borders */
-  --ok-b-0: 1px solid var(--ok-gray-2);
-  --ok-b-1: 1px solid var(--ok-gray-3);
+  --ok-b-0: 1px solid #dddddd;
+  --ok-b-1: 1px solid #8f8f8f;
 
   /* Icon from: https://material.io/resources/icons/?icon=arrow_drop_down&style=baseline */
   /* matches --ok-tc-0 */
@@ -458,10 +461,10 @@ template {
     --ok-tc-2: var(--ok-gray-5);
     --ok-tc-0-i: var(--ok-gray-9);
 
-    --ok-bg-0: var(--ok-gray-9);
-    --ok-bg-1: var(--ok-gray-7);
-    --ok-bg-2: var(--ok-gray-6);
-    --ok-b-0: 1px solid var(--ok-gray-6);
+    --ok-bg-0: var(--ok-gray-7);
+    --ok-bg-1: var(--ok-gray-6);
+    --ok-bg-2: var(--ok-gray-5);
+    --ok-b-0: 1px solid var(--ok-gray-5);
     --ok-b-1: 1px solid var(--ok-gray-4);
     --ok-down-0: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24' fill='%23fefefe'%3E%3Cpath d='M7 10l5 5 5-5z' /%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
     --ok-down-1: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24' fill='%23696969'%3E%3Cpath d='M7 10l5 5 5-5z' /%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
@@ -493,6 +496,9 @@ html {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
 }
@@ -709,6 +715,21 @@ textarea:disabled {
   color: var(--ok-tc-2);
 }
 
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: var(--ok-tc-2);
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: var(--ok-tc-2);
+}
+
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+  color: var(--ok-tc-2);
+}
+
 input::placeholder,
 textarea::placeholder {
   color: var(--ok-tc-2);
@@ -755,6 +776,8 @@ textarea:disabled {
 }
 
 input[type="search"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
 }
 
@@ -783,6 +806,8 @@ input[type="time"],
 input[type="date"] {
   position: relative;
   height: 2.5rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   position: relative;
 }
@@ -829,6 +854,8 @@ input[type="range"] {
   overflow: visible;
   line-height: inherit;
   font-family: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   margin: 0;
   outline: none;
@@ -958,6 +985,8 @@ input[type="range"]:disabled::-ms-thumb {
 }
 
 select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   border: var(--ok-b-0);
   border-radius: var(--ok-br);
@@ -1187,7 +1216,21 @@ ol {
   padding-left: var(--ok-s-5);
 }
 
+nav ul {
+  text-decoration: none;
+  padding-left: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 1em;
+}
+
 /* Other */
+
+details {
+  cursor: pointer;
+}
 
 time {
   font-size: var(--ok-fs-6);
