@@ -401,14 +401,20 @@ template {
   --ok-lh-body: 1.5;
   --ok-lh-heading: 1.25;
 
+  /* highlight color */
+  --ok-t-hl: #ffcf30;
+
+  /* button backgrounds */
   --ok-accent-0: #3e67fa;
   --ok-accent-1: #4788ff;
-  --ok-tc-accent: #3e67fa;
 
+  /* link color */
+  --ok-tc-accent: #3173de;
+
+  /* code color */
   --ok-tc-code: #c23a30;
-  --ok-t-hl: #fed324;
 
-  /* default text color */
+  /* primary text color */
   --ok-tc-0: #000000;
   /* muted */
   --ok-tc-1: #747474;
@@ -418,11 +424,10 @@ template {
   /* background color */
   --ok-bg-0: #ffffff;
   --ok-bg-1: #f0f0f0;
-  /* BG accent */
   --ok-bg-2: #cccccc;
 
-  /* borders */
-  --ok-b-0: 1px solid #dddddd;
+  /* border */
+  --ok-b-0: 1px solid #cbcbcb;
   /* border hover */
   --ok-b-1: 1px solid #848484;
 
@@ -434,8 +439,6 @@ template {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --ok-accent-0: #3e67fa;
-    --ok-accent-1: #4788ff;
     --ok-tc-accent: #5c9aff;
     --ok-tc-code: #ed5853;
     --ok-tc-0: #ffffff;
@@ -445,7 +448,6 @@ template {
     --ok-bg-0: #000000;
     --ok-bg-1: #212121;
     --ok-bg-2: #3e3e3e;
-    --ok-t-hl: #ffcf30;
 
     --ok-b-0: 1px solid #747474;
     --ok-b-1: 1px solid #929292;
@@ -1224,7 +1226,7 @@ time {
 mark {
   padding: 0.2em 0.4em;
   background: var(--ok-t-hl);
-  color: #000;
+  color: #000000;
   border-radius: var(--ok-br);
 }
 
