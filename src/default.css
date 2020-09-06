@@ -1282,6 +1282,18 @@ abbr {
     border: var(--ok-b-1);
   }
 
+  input[type="range"]:hover:not(:disabled)::-webkit-slider-runnable-track {
+    border: var(--ok-b-1);
+  }
+
+  input[type="range"]:hover:not(:disabled)::-moz-range-track {
+    border: var(--ok-b-1);
+  }
+
+  input[type="range"]:hover:not(:disabled)::-ms-track {
+    border: var(--ok-b-1);
+  }
+
   select:not([multiple]):not(:disabled):hover {
     cursor: pointer;
   }
