@@ -5,14 +5,6 @@ const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
 
-gulp.task("prefix", function (cb) {
-  gulp
-    .src("./src/default.css")
-    .pipe(postcss([autoprefixer()]))
-    .pipe(gulp.dest("src"));
-  cb();
-});
-
 exports.default = () =>
   gulp
     .src("./src/default.css")
