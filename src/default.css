@@ -1148,7 +1148,7 @@ pre {
   padding: var(--ok-s-3);
   color: var(--ok-tc-0);
   white-space: pre;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 var {
