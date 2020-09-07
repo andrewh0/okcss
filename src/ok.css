@@ -375,18 +375,17 @@ template {
   --ok-fw-3: 700;
 
   /* font-size */
-  --ok-fs-0: 3rem; /* 48 */
-  --ok-fs-1: 2.5rem; /* 40 */
-  --ok-fs-2: 2rem; /* 32 */
-  --ok-fs-3: 1.5rem; /* 24 */
-  --ok-fs-4: 1.25rem; /* 20 */
-  --ok-fs-5: 1rem; /* 16 */
-  --ok-fs-6: 0.75rem; /* 12 */
+  --ok-fs-0: 2.5rem; /* 40 */
+  --ok-fs-1: 2rem; /* 32 */
+  --ok-fs-2: 1.5rem; /* 24 */
+  --ok-fs-3: 1.25rem; /* 20 */
+  --ok-fs-4: 1rem; /* 16 */
+  --ok-fs-5: 0.75rem; /* 12 */
 
   /* border-radius */
   --ok-br: 0.25rem;
 
-  /* space */
+  /* spacing */
   --ok-s-0: 0;
   --ok-s-1: 0.25rem; /* 4 */
   --ok-s-2: 0.5rem; /* 8 */
@@ -398,10 +397,11 @@ template {
   /* VARIABLES */
   /* ================================== */
 
+  /* line heights */
   --ok-lh-body: 1.5;
   --ok-lh-heading: 1.25;
 
-  /* highlight color */
+  /* text highlight background color */
   --ok-t-hl: #ffcf30;
 
   /* button backgrounds */
@@ -416,9 +416,9 @@ template {
 
   /* primary text color */
   --ok-tc-0: #000000;
-  /* muted */
+  /* secondary text color */
   --ok-tc-1: #747474;
-  /* disabled, placeholder */
+  /* tertiary text color (for disabled fields, placeholder text) */
   --ok-tc-2: #848484;
 
   /* background color */
@@ -431,9 +431,12 @@ template {
   /* border hover */
   --ok-b-1: 1px solid #848484;
 
-  /* matches --ok-tc-1 */
+  /*
+  down arrow for dropdown menu input
+  fill matches --ok-tc-1
+  */
   --ok-down-0: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6h0l4-4h1s0 0 0 0v1-1L6 7s0 0 0 0L1 2h1l4 4z' fill='%23747474'/%3E%3C/svg%3E");
-  /* matches --ok-tc-2 for disabled states */
+  /* fill matches --ok-tc-2 for disabled states */
   --ok-down-1: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6h0l4-4h1s0 0 0 0v1-1L6 7s0 0 0 0L1 2h1l4 4z' fill='%23848484'/%3E%3C/svg%3E");
 }
 
@@ -529,8 +532,6 @@ video {
   height: auto;
 }
 
-/* Opinions--------------------*/
-
 body {
   padding: var(--ok-s-3);
   max-width: 80ch;
@@ -556,7 +557,7 @@ h5 {
   font-size: var(--ok-fs-4);
 }
 h6 {
-  font-size: var(--ok-fs-6);
+  font-size: var(--ok-fs-5);
   text-transform: uppercase;
   font-weight: var(--ok-fw-1);
 }
@@ -572,11 +573,11 @@ h6 {
 }
 
 p {
-  font-size: var(--ok-fs-5);
+  font-size: var(--ok-fs-4);
 }
 
 small {
-  font-size: var(--ok-fs-6);
+  font-size: var(--ok-fs-5);
 }
 
 /* https://csswizardry.com/2012/06/single-direction-margin-declarations/ */
@@ -682,7 +683,7 @@ fieldset {
 legend {
   font-weight: var(--ok-fw-1);
   text-transform: uppercase;
-  font-size: var(--ok-fs-6);
+  font-size: var(--ok-fs-5);
 }
 
 input,
@@ -1106,7 +1107,7 @@ table {
 thead tr,
 tfoot tr {
   background-color: var(--ok-bg-1);
-  font-size: var(--ok-fs-6);
+  font-size: var(--ok-fs-5);
   text-transform: uppercase;
   color: var(--ok-tc-0);
 }
@@ -1213,14 +1214,33 @@ nav ul li {
   margin-right: 1em;
 }
 
+/* Images and figures*/
+
+img {
+  border-radius: var(--ok-br);
+}
+
+figure > img {
+  margin: auto;
+}
+
+figure > img:not(:last-child) {
+  margin-bottom: var(--ok-s-1);
+}
+
+figure > figcaption {
+  text-align: center;
+}
+
 /* Other */
 
 details {
   cursor: pointer;
 }
 
-time {
-  font-size: var(--ok-fs-6);
+time,
+figcaption {
+  font-size: var(--ok-fs-5);
   color: var(--ok-tc-1);
 }
 
@@ -1242,7 +1262,7 @@ hr {
 }
 
 footer {
-  font-size: var(--ok-fs-6);
+  font-size: var(--ok-fs-5);
   color: var(--ok-tc-1);
 }
 

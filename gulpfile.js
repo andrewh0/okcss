@@ -7,11 +7,11 @@ const cssnano = require("cssnano");
 
 exports.default = () =>
   gulp
-    .src("./src/default.css")
+    .src("./src/ok.css")
     .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(
       rename({
-        basename: "default",
+        basename: "ok",
         extname: ".min.css",
       })
     )
