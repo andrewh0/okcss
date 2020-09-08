@@ -615,6 +615,7 @@ ol,
 p,
 pre,
 section,
+summary,
 table,
 ul,
 /* buttons and inputs */
@@ -1143,6 +1144,7 @@ samp {
   line-height: var(--ok-lh-body);
   background-color: var(--ok-bg-1);
   border-radius: var(--ok-br);
+  text-transform: none;
 }
 
 pre {
@@ -1214,14 +1216,17 @@ nav ul li {
   margin-right: 1em;
 }
 
-/* Images and figures*/
+/* Images, figures, and media*/
+
+img,
+video,
+audio {
+  margin-left: auto;
+  margin-right: auto;
+}
 
 img {
   border-radius: var(--ok-br);
-}
-
-figure > img {
-  margin: auto;
 }
 
 figure > img:not(:last-child) {
@@ -1233,11 +1238,6 @@ figure > figcaption {
 }
 
 /* Other */
-
-details {
-  cursor: pointer;
-}
-
 time,
 figcaption {
   font-size: var(--ok-fs-5);
@@ -1254,6 +1254,7 @@ mark {
 iframe {
   border: var(--ok-b-0);
   border-radius: var(--ok-br);
+  width: 100%;
 }
 
 hr {
