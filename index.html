@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OK.css</title>
+    <link rel="stylesheet" href="https://okcss.netlify.app/ok.min.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/demo">Demo</a></li>
+        <li><a href="https://github.com/andrewh0">Contribute</a></li>
+      </ul>
+    </nav>
+    <main>
+      <header>
+        <h1><span aria-hidden="true" role="presentation">🆗 </span>OK.css</h1>
+      </header>
+      <section>
+        <p>
+          <b>OK.css</b> is a
+          <a href="https://css-tricks.com/no-class-css-frameworks/"
+            >class-less CSS framework</a
+          >
+          that adds sensible defaults to your web page. Adding it into your HTML
+          will make your page look decent — no need to reference documentation
+          or account for browser differences as long as your markup is
+          semantically-correct.
+        </p>
+        <p>
+          To use it, you can
+          <a href="https://okcss.netlify.app/ok.min.css"
+            >download the CSS file directly</a
+          >
+          or add the following line to your HTML <code>&lt;head&gt;</code>:
+        </p>
+        <pre>
+&lt;link rel="stylesheet" href="https://okcss.netlify.app/ok.min.css" /&gt;</pre
+        >
+        <p>
+          <b>OK.css</b> is somewhere between a CSS normalizer and a full-fledged
+          framework like <a href="https://getbootstrap.com/">Bootstrap</a> or
+          <a href="https://tailwindcss.com/">Tailwind</a>. It's great for blogs
+          or small single-page applications, but might not be so great for
+          large, interactive apps that require JavaScript or custom elements.
+        </p>
+      </section>
+      <hr />
+      <section>
+        <h2>What does it look like?</h2>
+        <p>
+          You're looking at it! A comprehensive set of supported elements can be
+          found on the
+          <a href="/demo.html">demo</a> page.
+        </p>
+        <h3>Features</h3>
+        <p>
+          This CSS framework is intentionally <i>boring</i> and
+          <i>unsurprising</i>. It aims to get out of the way so you can focus on
+          what makes your app unique. <b>OK.css</b>&hellip;
+        </p>
+        <ul>
+          <li>
+            includes and builds on
+            <a href="https://necolas.github.io/normalize.css/">normalize.css</a
+            >.
+          </li>
+          <li>
+            adopts <a href="https://rsms.me/inter/">Inter</a> as its primary
+            font family.
+          </li>
+          <li>
+            uses a
+            <a href="https://spec.fm/specifics/8-pt-grid">base-8</a> rem/em
+            spacing and sizing for harmonious vertical rhythm.
+          </li>
+          <li>
+            is compliant with the
+            <a
+              href="https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html"
+              >WCAG</a
+            >
+            recommendation to use a <b>4.5:1</b> contrast ratio or higher for
+            primary text and background colors.
+          </li>
+          <li>
+            toggles <b>dark and light</b> themes automatically based on browser
+            or system settings.
+          </li>
+        </ul>
+        <h3>Limitations</h3>
+        <ul>
+          <li>Right-to-left languages may not be supported well.</li>
+          <li>There is limited support for Internet Explorer.</li>
+          <li>
+            Less commonly used HTML tags like <code>&lt;progress&gt;</code> and
+            <code>&lt;meter&gt;</code> are not styled.
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Inspiration and motivation</h2>
+        <p>
+          I built <b>OK.css</b> because I got tired of reusing the same CSS
+          snippets between small personal projects. I wanted to make my web
+          pages look <i>presentable</i>, <i>accessible</i>, and
+          <i>consistent</i> between browsers — not broken or like it was built
+          in the 90s. Using a popular CSS framework would have helped, but I
+          didn't have time to memorize class names, look up documentation, or
+          figure out how to update styling. I started to wish for drop-in CSS
+          that "just works" and was good enough, so that I could get back to
+          things unique to my projects.
+        </p>
+        <h3>Influences</h3>
+        <p>
+          While creating this stylesheet, I borrowed ideas from these class-less
+          CSS frameworks&hellip;
+        </p>
+        <ul>
+          <li><a href="https://newcss.net/">new.css</a></li>
+          <li><a href="https://watercss.netlify.app/">Water.css</a></li>
+          <li><a href="https://yegor256.github.io/tacit/">Tacit</a></li>
+          <li><a href="https://oxal.org/projects/sakura/">sakura</a></li>
+        </ul>
+        <p>&hellip;and from these other approaches to styling:</p>
+        <ul>
+          <li><a href="https://tailwindcss.com/">Tailwind CSS</a></li>
+          <li><a href="https://tachyons.io/">Tachyons</a></li>
+          <li><a href="https://theme-ui.com/">Theme UI</a></li>
+        </ul>
+        <p>
+          The thinking behind <b>OK.css</b>'s styling was influenced by these
+          design systems:
+        </p>
+        <ul>
+          <li><a href="https://primer.style/css/">Primer</a> by GitHub</li>
+          <li><a href="https://garden.zendesk.com/">Garden</a> by Zendesk</li>
+          <li><a href="https://polaris.shopify.com/">Polaris</a> by Shopify</li>
+        </ul>
+      </section>
+    </main>
+    <footer>
+      Made by
+      <a href="https://twitter.com/andrewlho_codes">@andrewlho_codes</a> in
+      2020.
+    </footer>
+  </body>
+</html>
