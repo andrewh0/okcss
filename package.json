@@ -2,6 +2,7 @@
   "license": "MIT",
   "scripts": {
     "build": "yarn run gulp",
+    "deploy": "yarn run gulp deploy",
     "start": "yarn run serve ."
   },
   "dependencies": {

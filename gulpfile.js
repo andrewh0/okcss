@@ -5,7 +5,7 @@ const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
 
-exports.default = () =>
+const buildCSS = () =>
   gulp
     .src("./src/ok.css")
     .pipe(postcss([autoprefixer(), cssnano()]))
@@ -16,3 +16,11 @@ exports.default = () =>
       })
     )
     .pipe(gulp.dest("dist"));
+
+const prepareDeploy = () =>
+  gulp
+    .src(["./src/ok.css", "./dist/ok.min.css", "index.html", "demo.html"])
+    .pipe(gulp.dest("_site"));
+
+exports.default = buildCSS;
+exports.deploy = gulp.series(buildCSS, prepareDeploy);
