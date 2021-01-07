@@ -24,4 +24,3 @@ This repo is set up with [Netlify's continuous deployment](https://docs.netlify.
 ## Contributing
 
 Pull requests are welcome! If you find a bug or have a feature request, please submit a GitHub issue.
-a
