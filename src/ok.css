@@ -1,4 +1,4 @@
-/*! OK.css v1.0.2 | MIT License | github.com/andrewh0/okcss */
+/*! OK.css v1.0.3 | MIT License | github.com/andrewh0/okcss */
 
 @import url("https://rsms.me/inter/inter.css");
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -599,6 +599,7 @@ blockquote,
 details,
 dialog,
 dd,
+dl,
 div,
 fieldset,
 figcaption,
