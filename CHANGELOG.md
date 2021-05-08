@@ -1,3 +1,16 @@
+# v1.0.3 (Sat May 08 2021)
+
+#### 🐛 Bug Fix
+
+- Add spacing to description list [#10](https://github.com/andrewh0/okcss/pull/10) ([@andrewh0](https://github.com/andrewh0))
+- Fix CDN links [#9](https://github.com/andrewh0/okcss/pull/9) ([@andrewh0](https://github.com/andrewh0))
+
+#### Authors: 1
+
+- Andrew Ho ([@andrewh0](https://github.com/andrewh0))
+
+---
+
 # v1.0.2 (Sat May 08 2021)
 
 #### 🐛 Bug Fix
