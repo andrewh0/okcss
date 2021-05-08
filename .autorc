@@ -1,0 +1,7 @@
+{
+  "plugins": [
+    "git-tag"
+  ],
+  "owner": "andrewh0",
+  "repo": "okcss",
+}

@@ -13,5 +13,9 @@
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^2.0.0",
     "serve": "^11.3.2"
+  },
+  "devDependencies": {
+    "@auto-it/git-tag": "^10.27.0",
+    "auto": "^10.27.0"
   }
 }

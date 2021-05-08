@@ -7,10 +7,10 @@
 **OK.css** is a
 [classless CSS framework](https://css-tricks.com/no-class-css-frameworks/). Dropping it into your HTML will make your page look decent — no need to reference documentation, think about responsiveness, or account for browser differences as long as your markup is semantically-correct.
 
-To use it, you can [download the CSS file directly](https://okcss.netlify.app/ok.min.css) or add the following line to your HTML `<head>`:
+To use it, you can [download the CSS file directly](https://cdn.jsdelivr.net/gh/andrewh0/okcss@1/dist/ok.min.css) or add the following line to your HTML `<head>`:
 
 ```
-<link rel="stylesheet" href="https://okcss.netlify.app/ok.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/andrewh0/okcss@1/dist/ok.min.css" />
 ```
 
 Note that [normalize.css](https://github.com/necolas/normalize.css/) is included in **OK.css**.
