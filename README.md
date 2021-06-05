@@ -30,3 +30,32 @@ This repo is set up with [Netlify's continuous deployment](https://docs.netlify.
 ## Contributing
 
 Pull requests are welcome! If you find a bug or have a feature request, please submit a GitHub issue.
+
+## Alternative features
+
+Not all UI features can be implemented with classless CSS while remaining accessible and supported cross-browser. For more complex features, you may need to supplement this framework with additional HTML, CSS, or JavaScript.
+
+Here are some suggestions for altering the behavior of certain elements.
+
+**Feature**
+
+Make `table`s scroll horizontally when they are wider than the main content width.
+
+Desired behavior:
+![HTML table with horizontal scroll](https://user-images.githubusercontent.com/2905455/120902460-6bbadd80-c5f5-11eb-9d9d-1aea260b7f8f.gif)
+
+Note: In **OK.css**, `table`s are set to `display: table` for [accessibility reasons](https://www.tpgi.com/short-note-on-what-css-display-properties-do-to-table-semantics/).
+
+**Implementation**
+
+Wrap the table in a `<div>` with `overflow-x: scroll;`:
+
+```
+<div style="overflow-x: scroll">
+  <table>
+  ...
+  </table>
+</div>
+```
+
+One caveat is that this can prevent the table heading from sticking when scrolling vertically.
