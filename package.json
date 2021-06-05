@@ -3,7 +3,9 @@
   "scripts": {
     "build": "yarn run gulp",
     "deploy": "yarn run gulp deploy",
-    "start": "yarn run serve ."
+    "start": "yarn run serve .",
+    "release:dry": "yarn auto shipit --dry-run",
+    "release": "yarn auto shipit"
   },
   "dependencies": {
     "autoprefixer": "^9.8.0",
