@@ -1,3 +1,19 @@
+# v1.1.1 (Sat Jun 05 2021)
+
+#### 🐛 Bug Fix
+
+- v1.1.1 [#15](https://github.com/andrewh0/okcss/pull/15) ([@andrewh0](https://github.com/andrewh0))
+
+#### ⚠️ Pushed to `main`
+
+- Update README ([@andrewh0](https://github.com/andrewh0))
+
+#### Authors: 1
+
+- Andrew Ho ([@andrewh0](https://github.com/andrewh0))
+
+---
+
 # v1.0.3 (Sat May 08 2021)
 
 #### 🐛 Bug Fix
