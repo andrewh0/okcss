@@ -42,6 +42,7 @@ Here are some suggestions for altering the behavior of certain elements.
 Make `table`s scroll horizontally when they are wider than the main content width.
 
 Desired behavior:
+
 ![HTML table with horizontal scroll](https://user-images.githubusercontent.com/2905455/120902460-6bbadd80-c5f5-11eb-9d9d-1aea260b7f8f.gif)
 
 Note: In **OK.css**, `table`s are set to `display: table` for [accessibility reasons](https://www.tpgi.com/short-note-on-what-css-display-properties-do-to-table-semantics/).
