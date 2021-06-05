@@ -1178,6 +1178,11 @@ pre,
 code,
 samp {
   font-family: var(--ok-mono);
+  /*
+  87.5% = 7/8
+  If 1rem is 16px, font-size is 14px.
+  */
+  font-size: 87.5%;
   line-height: var(--ok-lh-body);
   background-color: var(--ok-bg-1);
   border-radius: var(--ok-br);
