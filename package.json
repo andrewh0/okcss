@@ -3,7 +3,9 @@
   "scripts": {
     "build": "yarn run gulp",
     "deploy": "yarn run gulp deploy",
-    "start": "yarn run serve ."
+    "start": "yarn run serve .",
+    "release:dry": "yarn auto shipit --dry-run",
+    "release": "yarn auto shipit"
   },
   "dependencies": {
     "autoprefixer": "^9.8.0",
@@ -16,6 +18,8 @@
   },
   "devDependencies": {
     "@auto-it/git-tag": "^10.27.0",
+    "@auto-it/pr-body-labels": "^10.29.2",
+    "@auto-it/upload-assets": "^10.29.2",
     "auto": "^10.27.0"
   }
 }

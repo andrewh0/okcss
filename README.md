@@ -27,6 +27,20 @@ Make updates to the CSS file in `./src/ok.css` and `yarn build` to create a mini
 
 This repo is set up with [Netlify's continuous deployment](https://docs.netlify.com/configure-builds/get-started/). `yarn deploy` copies files into a `.gitignore`d directory called `_site` and `_site` is hosted on Netlify.
 
+## Releasing
+
+Confirm changes with:
+
+```
+yarn release:dry
+```
+
+Release with:
+
+```
+yarn release
+```
+
 ## Contributing
 
 Pull requests are welcome! If you find a bug or have a feature request, please submit a GitHub issue.
