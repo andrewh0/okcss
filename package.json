@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "@auto-it/git-tag": "^10.27.0",
+    "@auto-it/pr-body-labels": "^10.29.2",
     "@auto-it/upload-assets": "^10.29.2",
     "auto": "^10.27.0"
   }

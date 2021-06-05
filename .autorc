@@ -2,6 +2,7 @@
   "plugins": [
     "git-tag",
     ["upload-assets", { "assets": ["./src/ok.css", "./dist/ok.min.css"] }],
+    ["pr-body-labels"]
   ],
   "owner": "andrewh0",
   "repo": "okcss",
