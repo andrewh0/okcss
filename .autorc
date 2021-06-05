@@ -1,6 +1,7 @@
 {
   "plugins": [
-    "git-tag"
+    "git-tag",
+    ["upload-assets", { "assets": ["./src/ok.css", "./dist/ok.min.css"] }],
   ],
   "owner": "andrewh0",
   "repo": "okcss",
