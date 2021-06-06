@@ -10,6 +10,18 @@
 
 ---
 
+# v1.2.0 (Sat Jun 05 2021)
+
+#### 🚀 Enhancement
+
+- Improve typography [#17](https://github.com/andrewh0/okcss/pull/17) ([@andrewh0](https://github.com/andrewh0))
+
+#### Authors: 1
+
+- Andrew Ho ([@andrewh0](https://github.com/andrewh0))
+
+---
+
 # v1.1.1 (Sat Jun 05 2021)
 
 #### 🐛 Bug Fix
