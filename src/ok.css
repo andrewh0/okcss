@@ -541,6 +541,10 @@ body {
   margin: auto;
 }
 
+article {
+  padding-bottom: var(--ok-s-6);
+}
+
 /* Typography */
 h1 {
   font-size: var(--ok-fs-0);
@@ -573,6 +577,18 @@ h5,
 h6 {
   line-height: var(--ok-lh-heading);
   font-weight: var(--ok-fw-3);
+  margin-top: var(--ok-s-6);
+  margin-bottom: var(--ok-s-3);
+}
+
+h1 + *,
+h2 + *,
+h3 + *,
+h4 + *,
+h5 + *,
+h6 + *,
+hr + * {
+  margin-top: 0;
 }
 
 p {
@@ -607,12 +623,6 @@ figcaption,
 figure,
 footer,
 form,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
 header,
 hgroup,
 hr,
@@ -1113,7 +1123,6 @@ table {
   allow sticky header and footer
   */
   display: table;
-  max-width: fit-content;
   margin-left: auto;
   margin-right: auto;
   white-space: nowrap;
@@ -1242,6 +1251,12 @@ a:visited {
   color: var(--ok-tc-accent);
 }
 
+a code,
+a samp,
+a mark {
+  color: var(--ok-tc-accent);
+}
+
 /* Lists */
 ul,
 ol {
@@ -1256,6 +1271,19 @@ nav ul {
 nav ul li {
   display: inline;
   margin-right: 1em;
+}
+
+li p {
+  margin-bottom: 0;
+}
+
+/*
+margin-top instead of margin-bottom to add space when
+a <ul> or <ol> is added as a nested list.
+*/
+li,
+li p + p {
+  margin-top: 0.5em;
 }
 
 /* Images, figures, and media*/
