@@ -1402,3 +1402,7 @@ abbr {
     background-color: var(--ok-accent-1);
   }
 }
+
+::selection{
+   background-color: #f1f4f5
+}
