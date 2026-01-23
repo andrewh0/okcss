@@ -14,14 +14,9 @@ else
   sed -i "s/OK.css v[0-9]*\.[0-9]*\.[0-9]*/OK.css v$VERSION/" src/tables.css
 fi
 
-# Create temporary bundled file by concatenating (core.css already has the header)
-cat src/core.css src/forms.css src/tables.css > dist/ok.bundled.css
-
-# Minify the bundled version
-npx lightningcss --minify --targets '>= 0.25%' dist/ok.bundled.css -o dist/ok.min.css
-
-# Clean up temp file
-rm dist/ok.bundled.css
+# Build bundled ok.min.css by concatenating source files
+# Note: Cannot use --bundle because core.css has external @import that lightningcss tries to resolve
+cat src/core.css src/forms.css src/tables.css | npx lightningcss --minify --targets '>= 0.25%' -o dist/ok.min.css
 
 # Build individual minified files for selective imports
 npx lightningcss --minify --targets '>= 0.25%' src/core.css -o dist/core.min.css
