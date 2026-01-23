@@ -1,3 +1,15 @@
+# v1.2.3 (Fri Jan 23 2026)
+
+#### 🐛 Bug Fix
+
+- Split OK.css into modular files [#27](https://github.com/andrewh0/okcss/pull/27) ([@andrewh0](https://github.com/andrewh0))
+
+#### Authors: 1
+
+- Andrew Ho ([@andrewh0](https://github.com/andrewh0))
+
+---
+
 # v1.2.2 (Fri Jan 23 2026)
 
 #### 🐛 Bug Fix
