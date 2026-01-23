@@ -30,6 +30,11 @@ jobs:
       - name: Build
         run: yarn build
 
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Create Release
         run: yarn release
         env:
