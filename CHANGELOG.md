@@ -1,3 +1,20 @@
+# v1.2.1 (Fri Jan 23 2026)
+
+#### 🐛 Bug Fix
+
+- Configure git user in release workflow [#24](https://github.com/andrewh0/okcss/pull/24) ([@andrewh0](https://github.com/andrewh0))
+- Fix author field format for auto release [#23](https://github.com/andrewh0/okcss/pull/23) ([@andrewh0](https://github.com/andrewh0))
+- Add author field to package.json to fix release error [#22](https://github.com/andrewh0/okcss/pull/22) ([@andrewh0](https://github.com/andrewh0))
+- Upgrade auto packages to fix GitHub Actions release error [#21](https://github.com/andrewh0/okcss/pull/21) ([@andrewh0](https://github.com/andrewh0))
+- Automate releases with GitHub Actions [#20](https://github.com/andrewh0/okcss/pull/20) ([@andrewh0](https://github.com/andrewh0))
+- Fix version number [#18](https://github.com/andrewh0/okcss/pull/18) ([@andrewh0](https://github.com/andrewh0))
+
+#### Authors: 1
+
+- Andrew Ho ([@andrewh0](https://github.com/andrewh0))
+
+---
+
 # v1.2.0 (Sat Jun 05 2021)
 
 #### 🚀 Enhancement
