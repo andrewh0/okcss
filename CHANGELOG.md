@@ -1,3 +1,16 @@
+# v1.2.2 (Fri Jan 23 2026)
+
+#### 🐛 Bug Fix
+
+- Fix release: use npm version hook for CSS version sync [#26](https://github.com/andrewh0/okcss/pull/26) ([@andrewh0](https://github.com/andrewh0))
+- Replace gulp with Lightning CSS for CSS compilation [#25](https://github.com/andrewh0/okcss/pull/25) ([@andrewh0](https://github.com/andrewh0))
+
+#### Authors: 1
+
+- Andrew Ho ([@andrewh0](https://github.com/andrewh0))
+
+---
+
 # v1.2.1 (Fri Jan 23 2026)
 
 #### 🐛 Bug Fix
