@@ -50,13 +50,13 @@
           <p>
             To use it, you can
             <a
-              href="https://cdn.jsdelivr.net/gh/andrewh0/okcss@1/dist/ok.min.css"
+              href="https://cdn.jsdelivr.net/gh/andrewh0/okcss@2/dist/ok.min.css"
               >download the CSS file directly</a
             >
             or add the following line to your HTML <code>&lt;head&gt;</code>:
           </p>
           <pre>
-&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/andrewh0/okcss@1/dist/ok.min.css" /&gt;</pre
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/andrewh0/okcss@2/dist/ok.min.css" /&gt;</pre
           >
           <p>
             <b>OK.css</b> is somewhere between a CSS normalizer and a
@@ -69,11 +69,28 @@
           </p>
         </section>
         <section>
-          <h2>What does it look like?</h2>
+          <h2>Modular imports</h2>
           <p>
-            You're looking at it! A comprehensive set of supported elements can
-            be found on the
-            <a href="/demo.html">demo</a> page.
+            <b>OK.css</b> is split into three modules. Import only what you
+            need:
+          </p>
+          <ul>
+            <li>
+              <b>Core</b> (<code>core.min.css</code>, ~7 KB) — Typography,
+              colors, dark mode, normalize, code blocks, links, lists, images.
+              Perfect for documentation, blogs, and markdown.
+            </li>
+            <li>
+              <b>Forms</b> (<code>forms.min.css</code>, ~12 KB) — Inputs,
+              selects, textareas, buttons. Requires core.
+            </li>
+            <li>
+              <b>Tables</b> (<code>tables.min.css</code>, ~1 KB) — Table
+              styling with sticky headers. Requires core.
+            </li>
+          </ul>
+          <p>
+            See all supported elements on the <a href="/demo.html">demo</a> page.
           </p>
           <h3>Features</h3>
           <p>

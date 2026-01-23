@@ -7,13 +7,42 @@
 **OK.css** is a
 [classless CSS framework](https://css-tricks.com/no-class-css-frameworks/). Dropping it into your HTML will make your page look decent — no need to reference documentation, think about responsiveness, or account for browser differences as long as your markup is semantically-correct.
 
-To use it, you can [download the CSS file directly](https://cdn.jsdelivr.net/gh/andrewh0/okcss@1/dist/ok.min.css) or add the following line to your HTML `<head>`:
+To use it, you can [download the CSS file directly](https://cdn.jsdelivr.net/gh/andrewh0/okcss@2/dist/ok.min.css) or add the following line to your HTML `<head>`:
 
 ```
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/andrewh0/okcss@1/dist/ok.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/andrewh0/okcss@2/dist/ok.min.css" />
 ```
 
 Note that [normalize.css](https://github.com/necolas/normalize.css/) is included in **OK.css**.
+
+### Modular imports
+
+If you don't need all of **OK.css**, you can import individual modules to reduce file size:
+
+| File | Size | Description |
+|------|------|-------------|
+| `ok.min.css` | ~19 KB | Full framework (includes everything) |
+| `core.min.css` | ~7 KB | Typography, colors, dark mode, code blocks, links, lists, images |
+| `forms.min.css` | ~12 KB | Inputs, selects, textareas, buttons (requires `core.min.css`) |
+| `tables.min.css` | ~1 KB | Table styling (requires `core.min.css`) |
+
+**Example: Content-only site (documentation, blog, markdown)**
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/andrewh0/okcss@2/dist/core.min.css" />
+```
+
+**Example: Content site with forms**
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/andrewh0/okcss@2/dist/core.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/andrewh0/okcss@2/dist/forms.min.css" />
+```
+
+**Example: Full framework with tables**
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/andrewh0/okcss@2/dist/core.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/andrewh0/okcss@2/dist/forms.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/andrewh0/okcss@2/dist/tables.min.css" />
+```
 
 **OK.css** is somewhere between a CSS normalizer and a full-fledged framework like [Bootstrap](https://getbootstrap.com/)</a> or [Tailwind](https://tailwindcss.com/)</a>. It's great for blogs or small single-page applications, but might not be so great for large, interactive apps that require JavaScript or custom elements.
 
@@ -23,7 +52,12 @@ Install dependencies with `yarn install`.
 
 You can start a local server with `yarn start`. By default, the page will be available at `http://localhost:5000`.
 
-Make updates to the CSS file in `./src/ok.css` and `yarn build` to create a minified version available in `./dist/ok.min.css`.
+Make updates to the CSS files in `./src/` and run `yarn build` to create minified versions in `./dist/`:
+
+- `src/core.css` - Typography, colors, dark mode, normalize, code, links, lists, media
+- `src/forms.css` - Form inputs, selects, textareas, buttons
+- `src/tables.css` - Table styling
+- `src/ok.css` - Entry point that imports all modules
 
 The build uses [Lightning CSS](https://lightningcss.dev/) for minification and autoprefixing. The version number in the CSS header is automatically synced from `package.json`.
 

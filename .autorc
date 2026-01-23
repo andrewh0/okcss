@@ -2,7 +2,12 @@
   "plugins": [
     "released",
     "npm",
-    ["upload-assets", { "assets": ["./src/ok.css", "./dist/ok.min.css"] }],
+    ["upload-assets", { "assets": [
+      "./dist/ok.min.css",
+      "./dist/core.min.css",
+      "./dist/forms.min.css",
+      "./dist/tables.min.css"
+    ] }],
     ["pr-body-labels"]
   ],
   "owner": "andrewh0",

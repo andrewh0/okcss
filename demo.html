@@ -39,20 +39,43 @@
         </header>
         <section>
           <h2>Contents</h2>
+          <p>
+            <b>OK.css</b> is split into three modules. You can import all of
+            them with <code>ok.min.css</code>, or import only what you need.
+          </p>
           <ul>
-            <li><a href="#type-scale">Type scale</a></li>
-            <li><a href="#inline-elements">Inline elements</a></li>
-            <li><a href="#code">Code</a></li>
-            <li><a href="#media">Media</a></li>
-            <li><a href="#lists">Lists</a></li>
-            <li><a href="#tables">Tables</a></li>
-            <li><a href="#forms-and-inputs">Forms and inputs</a></li>
-            <li><a href="#other">Other</a></li>
+            <li>
+              <a href="#core">Core</a> (<code>core.min.css</code>) — Typography,
+              colors, dark mode, code blocks, links, lists, images
+            </li>
+            <li>
+              <a href="#forms">Forms</a> (<code>forms.min.css</code>) — Inputs,
+              selects, textareas, buttons
+            </li>
+            <li>
+              <a href="#tables">Tables</a> (<code>tables.min.css</code>) — Table
+              styling
+            </li>
           </ul>
         </section>
+
+        <!-- ============================================
+             CORE MODULE
+             ============================================ -->
         <hr />
+        <section id="core">
+          <h2>Core</h2>
+          <p>
+            The core module includes everything you need for a content-focused
+            site: typography, colors, dark mode, normalize, code blocks, links,
+            lists, and media elements. Perfect for documentation, blogs, and
+            markdown rendering.
+          </p>
+          <pre>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/andrewh0/okcss@2/dist/core.min.css" /&gt;</pre>
+        </section>
+
         <section id="type-scale">
-          <h2>Type scale</h2>
+          <h3>Type scale</h3>
           <h1>Header 1 <code>h1</code></h1>
           <h2>Header 2 <code>h2</code></h2>
           <h3>Header 3 <code>h3</code></h3>
@@ -61,8 +84,9 @@
           <h6>Header 6 <code>h6</code></h6>
           <p>Paragraph <code>p</code></p>
         </section>
+
         <section id="inline-elements">
-          <h2>Inline elements</h2>
+          <h3>Inline elements</h3>
           <p>This is a <a href="#">link.</a> <code>a</code></p>
           <p>
             This is <strong>strong</strong> text.
@@ -102,8 +126,9 @@
             <code>time</code>
           </p>
         </section>
+
         <section id="code">
-          <h2>Code</h2>
+          <h3>Code</h3>
           <p>Keyboard input: <kbd>Cmd</kbd> <code>kbd</code></p>
           <p>
             This is some code: <code>&lt;span&gt;code&lt;/span&gt;</code>
@@ -127,8 +152,32 @@ Ultricies leo integer malesuada nunc vel risus commodo viverra maecenas.
 Auctor elit sed vulputate mi sit amet mauris commodo quis.</pre
           >
         </section>
+
+        <section id="lists">
+          <h3>Lists</h3>
+          <p>This is an ordered list: <code>ol</code></p>
+          <ol>
+            <li>List item 1 <code>li</code></li>
+            <li>List item 2 <code>li</code></li>
+            <li>List item 3 <code>li</code></li>
+          </ol>
+          <p>This is an unordered list: <code>ul</code></p>
+          <ul>
+            <li>List item 1 <code>li</code></li>
+            <li>List item 2 <code>li</code></li>
+            <li>List item 3 <code>li</code></li>
+          </ul>
+          <p>This is a description list. <code>dl</code></p>
+          <dl>
+            <dt>This is a description term. <code>dt</code></dt>
+            <dd>And this is the description. <code>dd</code></dd>
+            <dt>This is another description term. <code>dt</code></dt>
+            <dd>With a different description. <code>dd</code></dd>
+          </dl>
+        </section>
+
         <section id="media">
-          <h2>Media</h2>
+          <h3>Media</h3>
           <p>This is a video: <code>video</code></p>
           <video controls=""></video>
           <p>This is a sound clip: <code>audio</code></p>
@@ -152,80 +201,43 @@ Auctor elit sed vulputate mi sit amet mauris commodo quis.</pre
             </figcaption>
           </figure>
         </section>
-        <section id="lists">
-          <h2>Lists</h2>
-          <p>This is an ordered list: <code>ol</code></p>
-          <ol>
-            <li>List item 1 <code>li</code></li>
-            <li>List item 2 <code>li</code></li>
-            <li>List item 3 <code>li</code></li>
-          </ol>
-          <p>This is an unordered list: <code>ul</code></p>
-          <ul>
-            <li>List item 1 <code>li</code></li>
-            <li>List item 2 <code>li</code></li>
-            <li>List item 3 <code>li</code></li>
-          </ul>
+
+        <section id="other-core">
+          <h3>Other</h3>
+          <p>This is a horizontal rule. <code>hr</code></p>
+          <hr />
+          <p>This is a blockquote. <code>blockquote</code></p>
+          <blockquote>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit anim id est laborum.
+            </p>
+            <p>
+              Aenean pharetra magna ac placerat vestibulum lectus mauris
+              ultrices eros.
+            </p>
+            <cite><a href="#">Aliquet eget.</a></cite>
+          </blockquote>
         </section>
-        <section id="tables">
-          <h2>Tables</h2>
-          <table>
-            <caption>
-              Table Caption
-              <code>caption</code>
-            </caption>
-            <thead>
-              <tr>
-                <th>Table Heading 1</th>
-                <th>Table Heading 2</th>
-                <th>Table Heading 3</th>
-                <th>Table Heading 4</th>
-                <th>Table Heading 5</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Table Cell 1</td>
-                <td>Table Cell 2</td>
-                <td>Table Cell 3</td>
-                <td>Table Cell 4</td>
-                <td>Table Cell 5</td>
-              </tr>
-              <tr>
-                <td>Table Cell 1</td>
-                <td>Table Cell 2</td>
-                <td>Table Cell 3</td>
-                <td>Table Cell 4</td>
-                <td>Table Cell 5</td>
-              </tr>
-              <tr>
-                <td>Table Cell 1</td>
-                <td>Table Cell 2</td>
-                <td>Table Cell 3</td>
-                <td>Table Cell 4</td>
-                <td>Table Cell 5</td>
-              </tr>
-              <tr>
-                <td>Table Cell 1</td>
-                <td>Table Cell 2</td>
-                <td>Table Cell 3</td>
-                <td>Table Cell 4</td>
-                <td>Table Cell 5</td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <th>Table Footer 1</th>
-                <th>Table Footer 2</th>
-                <th>Table Footer 3</th>
-                <th>Table Footer 4</th>
-                <th>Table Footer 5</th>
-              </tr>
-            </tfoot>
-          </table>
+
+        <!-- ============================================
+             FORMS MODULE
+             ============================================ -->
+        <hr />
+        <section id="forms">
+          <h2>Forms</h2>
+          <p>
+            The forms module includes all interactive form elements: text
+            inputs, date/time pickers, selects, checkboxes, radio buttons, range
+            sliders, file inputs, and buttons.
+          </p>
+          <pre>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/andrewh0/okcss@2/dist/core.min.css" /&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/andrewh0/okcss@2/dist/forms.min.css" /&gt;</pre>
         </section>
+
         <section id="forms-and-inputs">
-          <h2>Forms and inputs</h2>
           <form>
             <fieldset>
               <legend>Text inputs</legend>
@@ -499,32 +511,76 @@ Auctor elit sed vulputate mi sit amet mauris commodo quis.</pre
             </fieldset>
           </form>
         </section>
-        <section id="other">
-          <h2>Other</h2>
-          <p>This is a horizontal rule. <code>hr</code></p>
-          <hr />
-          <p>This is a blockquote. <code>blockquote</code></p>
 
-          <blockquote>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim id est laborum.
-            </p>
-            <p>
-              Aenean pharetra magna ac placerat vestibulum lectus mauris
-              ultrices eros.
-            </p>
-            <cite><a href="#">Aliquet eget.</a></cite>
-          </blockquote>
-          <p>This is a description list. <code>dl</code></p>
-          <dl>
-            <dt>This is a description term. <code>dt</code></dt>
-            <dd>And this is the description. <code>dd</code></dd>
-            <dt>This is another description term. <code>dt</code></dt>
-            <dd>With a different description. <code>dd</code></dd>
-          </dl>
+        <!-- ============================================
+             TABLES MODULE
+             ============================================ -->
+        <hr />
+        <section id="tables">
+          <h2>Tables</h2>
+          <p>
+            The tables module includes styling for data tables with sticky
+            headers, proper borders, and caption support.
+          </p>
+          <pre>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/andrewh0/okcss@2/dist/core.min.css" /&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/andrewh0/okcss@2/dist/tables.min.css" /&gt;</pre>
+        </section>
+
+        <section id="tables-demo">
+          <table>
+            <caption>
+              Table Caption
+              <code>caption</code>
+            </caption>
+            <thead>
+              <tr>
+                <th>Table Heading 1</th>
+                <th>Table Heading 2</th>
+                <th>Table Heading 3</th>
+                <th>Table Heading 4</th>
+                <th>Table Heading 5</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Table Cell 1</td>
+                <td>Table Cell 2</td>
+                <td>Table Cell 3</td>
+                <td>Table Cell 4</td>
+                <td>Table Cell 5</td>
+              </tr>
+              <tr>
+                <td>Table Cell 1</td>
+                <td>Table Cell 2</td>
+                <td>Table Cell 3</td>
+                <td>Table Cell 4</td>
+                <td>Table Cell 5</td>
+              </tr>
+              <tr>
+                <td>Table Cell 1</td>
+                <td>Table Cell 2</td>
+                <td>Table Cell 3</td>
+                <td>Table Cell 4</td>
+                <td>Table Cell 5</td>
+              </tr>
+              <tr>
+                <td>Table Cell 1</td>
+                <td>Table Cell 2</td>
+                <td>Table Cell 3</td>
+                <td>Table Cell 4</td>
+                <td>Table Cell 5</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>Table Footer 1</th>
+                <th>Table Footer 2</th>
+                <th>Table Footer 3</th>
+                <th>Table Footer 4</th>
+                <th>Table Footer 5</th>
+              </tr>
+            </tfoot>
+          </table>
         </section>
       </article>
     </main>
