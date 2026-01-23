@@ -25,6 +25,8 @@ You can start a local server with `yarn start`. By default, the page will be ava
 
 Make updates to the CSS file in `./src/ok.css` and `yarn build` to create a minified version available in `./dist/ok.min.css`.
 
+The build uses [Lightning CSS](https://lightningcss.dev/) for minification and autoprefixing. The version number in the CSS header is automatically synced from `package.json`.
+
 This repo is set up with [Netlify's continuous deployment](https://docs.netlify.com/configure-builds/get-started/). `yarn deploy` copies files into a `.gitignore`d directory called `_site` and `_site` is hosted on Netlify.
 
 ## Releasing
@@ -41,6 +43,8 @@ Releases are automated via GitHub Actions. When a PR is merged to `main`, a new 
    - `skip-release` - No release needed
 3. Merge the PR to `main`
 4. GitHub Actions will automatically:
+   - Bump the version in `package.json`
+   - Update the version in CSS files
    - Create a git tag
    - Create a GitHub Release with assets
    - Update CHANGELOG.md

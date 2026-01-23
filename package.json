@@ -1,23 +1,20 @@
 {
+  "name": "okcss",
+  "version": "1.2.1",
+  "private": true,
   "license": "MIT",
   "scripts": {
-    "build": "yarn run gulp",
-    "deploy": "yarn run gulp deploy",
+    "build": "./scripts/build.sh",
+    "deploy": "yarn build && mkdir -p _site && cp src/ok.css dist/ok.min.css index.html demo.html _site/",
     "start": "yarn run serve .",
     "release:dry": "yarn auto shipit --dry-run",
     "release": "yarn auto shipit"
   },
   "dependencies": {
-    "autoprefixer": "^9.8.0",
-    "cssnano": "^4.1.10",
-    "gulp": "^4.0.2",
-    "gulp-cli": "^2.2.1",
-    "gulp-postcss": "^8.0.0",
-    "gulp-rename": "^2.0.0",
+    "lightningcss-cli": "^1.31.1",
     "serve": "^11.3.2"
   },
   "devDependencies": {
-    "@auto-it/git-tag": "^11.3.6",
     "@auto-it/pr-body-labels": "^11.3.6",
     "@auto-it/released": "^11.3.6",
     "@auto-it/upload-assets": "^11.3.6",
