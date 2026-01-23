@@ -29,13 +29,54 @@ This repo is set up with [Netlify's continuous deployment](https://docs.netlify.
 
 ## Releasing
 
-Confirm changes with:
+Releases are automated via GitHub Actions. When a PR is merged to `main`, a new version is released based on the label in the PR body.
+
+### How to release
+
+1. Create a PR with your changes
+2. In the PR body, check one of the version labels:
+   - `patch` - Bug fixes and minor changes (1.0.0 → 1.0.1)
+   - `minor` - New features (1.0.0 → 1.1.0)
+   - `major` - Breaking changes (1.0.0 → 2.0.0)
+   - `skip-release` - No release needed
+3. Merge the PR to `main`
+4. GitHub Actions will automatically:
+   - Create a git tag
+   - Create a GitHub Release with assets
+   - Update CHANGELOG.md
+   - Comment on the PR with the released version
+
+### Prereleases
+
+Use the `next` branch to build up changes for a major release without publishing to `main`.
+
+1. Create and push the `next` branch from `main`:
+   ```
+   git checkout main
+   git pull
+   git checkout -b next
+   git push -u origin next
+   ```
+
+2. Merge PRs into `next` instead of `main`. Each merge creates a prerelease version (e.g., `2.0.0-next.0`, `2.0.0-next.1`).
+
+3. When ready to release, merge `next` into `main`:
+   ```
+   git checkout main
+   git merge next
+   git push
+   ```
+   This creates the final release (e.g., `2.0.0`).
+
+### Manual release (if needed)
+
+Preview what would be released:
 
 ```
 yarn release:dry
 ```
 
-Release with:
+Create a release manually:
 
 ```
 yarn release
