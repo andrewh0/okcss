@@ -17,10 +17,10 @@
     "serve": "^11.3.2"
   },
   "devDependencies": {
-    "@auto-it/git-tag": "^10.27.0",
-    "@auto-it/pr-body-labels": "^10.29.2",
-    "@auto-it/released": "^10.29.2",
-    "@auto-it/upload-assets": "^10.29.2",
-    "auto": "^10.27.0"
+    "@auto-it/git-tag": "^11.3.6",
+    "@auto-it/pr-body-labels": "^11.3.6",
+    "@auto-it/released": "^11.3.6",
+    "@auto-it/upload-assets": "^11.3.6",
+    "auto": "^11.3.6"
   }
 }
