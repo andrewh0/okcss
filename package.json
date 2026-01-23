@@ -7,6 +7,7 @@
     "build": "./scripts/build.sh",
     "deploy": "yarn build && mkdir -p _site && cp src/ok.css dist/ok.min.css index.html demo.html _site/",
     "start": "yarn run serve .",
+    "version": "yarn build && git add src/ok.css dist/ok.min.css",
     "release:dry": "yarn auto shipit --dry-run",
     "release": "yarn auto shipit"
   },
