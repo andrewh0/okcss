@@ -1,4 +1,5 @@
 {
+  "author": "andrewh0 <andrewh0@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
     "build": "yarn run gulp",
