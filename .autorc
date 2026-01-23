@@ -7,8 +7,5 @@
   ],
   "owner": "andrewh0",
   "repo": "okcss",
-  "prereleaseBranches": ["next"],
-  "scripts": {
-    "afterVersion": "yarn build"
-  }
+  "prereleaseBranches": ["next"]
 }
