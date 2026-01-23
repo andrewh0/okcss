@@ -1,6 +1,5 @@
 {
   "plugins": [
-    "released",
     "npm",
     ["upload-assets", { "assets": [
       "./dist/ok.min.css",
@@ -8,6 +7,7 @@
       "./dist/forms.min.css",
       "./dist/tables.min.css"
     ] }],
+    "released",
     ["pr-body-labels"]
   ],
   "owner": "andrewh0",
