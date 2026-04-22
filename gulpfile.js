@@ -19,7 +19,7 @@ const buildCSS = () =>
 
 const prepareDeploy = () =>
   gulp
-    .src(["./src/ok.css", "./dist/ok.min.css", "index.html", "demo.html"])
+    .src(["./src/ok.css", "./dist/ok.min.css", "index.html", "demo.html", "san-francisco.jpeg"])
     .pipe(gulp.dest("_site"));
 
 exports.default = buildCSS;
