@@ -201,6 +201,9 @@ template {
    ========================================================================== */
 
 :root {
+  /* let the browser match native UI (scrollbars, form controls, Safari chrome) to light/dark */
+  color-scheme: light dark;
+
   /* CONSTANTS */
   /* ================================== */
 
@@ -232,6 +235,10 @@ template {
 
   /* border-radius */
   --ok-br: 0.25rem;
+  /* corner-shape: squircle where supported (Chromium 139+), plain rounded corners elsewhere; set to `round` to opt out */
+  --ok-cs: squircle;
+  /* squircles look less rounded at the same radius; scale --ok-br by this to visually match round corners */
+  --ok-cs-scale: 1.75;
 
   /* spacing */
   --ok-s-0: 0;
@@ -367,6 +374,11 @@ video {
 
 body {
   padding: var(--ok-s-3);
+  /* keep content clear of notches and home indicators with viewport-fit=cover */
+  padding: max(var(--ok-s-3), env(safe-area-inset-top))
+    max(var(--ok-s-3), env(safe-area-inset-right))
+    max(var(--ok-s-3), env(safe-area-inset-bottom))
+    max(var(--ok-s-3), env(safe-area-inset-left));
   max-width: 80ch;
   margin: auto;
 }
@@ -530,6 +542,12 @@ samp {
   line-height: var(--ok-lh-body);
   background-color: var(--ok-bg-1);
   border-radius: var(--ok-br);
+  border-radius: if(
+    supports(corner-shape: squircle) and style(--ok-cs: squircle):
+      calc(var(--ok-br) * var(--ok-cs-scale));
+    else: var(--ok-br)
+  );
+  corner-shape: var(--ok-cs);
   text-transform: none;
 }
 
@@ -569,6 +587,12 @@ kbd {
   background-color: var(--ok-bg-1);
   border: var(--ok-b-0);
   border-radius: var(--ok-br);
+  border-radius: if(
+    supports(corner-shape: squircle) and style(--ok-cs: squircle):
+      calc(var(--ok-br) * var(--ok-cs-scale));
+    else: var(--ok-br)
+  );
+  corner-shape: var(--ok-cs);
   border-bottom: 2px solid var(--ok-bg-2);
   padding: var(--ok-s-1);
   font-family: var(--ok-sans);
@@ -637,6 +661,12 @@ audio {
 
 img {
   border-radius: var(--ok-br);
+  border-radius: if(
+    supports(corner-shape: squircle) and style(--ok-cs: squircle):
+      calc(var(--ok-br) * var(--ok-cs-scale));
+    else: var(--ok-br)
+  );
+  corner-shape: var(--ok-cs);
 }
 
 figure > img:not(:last-child) {
@@ -661,11 +691,23 @@ mark {
   background: var(--ok-t-hl);
   color: #000000;
   border-radius: var(--ok-br);
+  border-radius: if(
+    supports(corner-shape: squircle) and style(--ok-cs: squircle):
+      calc(var(--ok-br) * var(--ok-cs-scale));
+    else: var(--ok-br)
+  );
+  corner-shape: var(--ok-cs);
 }
 
 iframe {
   border: var(--ok-b-0);
   border-radius: var(--ok-br);
+  border-radius: if(
+    supports(corner-shape: squircle) and style(--ok-cs: squircle):
+      calc(var(--ok-br) * var(--ok-cs-scale));
+    else: var(--ok-br)
+  );
+  corner-shape: var(--ok-cs);
   width: 100%;
 }
 
@@ -694,6 +736,12 @@ blockquote::before {
   width: 4px;
   left: 0;
   border-radius: var(--ok-br);
+  border-radius: if(
+    supports(corner-shape: squircle) and style(--ok-cs: squircle):
+      calc(var(--ok-br) * var(--ok-cs-scale));
+    else: var(--ok-br)
+  );
+  corner-shape: var(--ok-cs);
   background-color: var(--ok-bg-1);
 }
 

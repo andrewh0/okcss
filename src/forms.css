@@ -220,6 +220,12 @@ fieldset {
   padding: var(--ok-s-3);
   border: var(--ok-b-0);
   border-radius: var(--ok-br);
+  border-radius: if(
+    supports(corner-shape: squircle) and style(--ok-cs: squircle):
+      calc(var(--ok-br) * var(--ok-cs-scale));
+    else: var(--ok-br)
+  );
+  corner-shape: var(--ok-cs);
 }
 
 legend {
@@ -237,6 +243,12 @@ select {
   background: var(--ok-bg-0);
   border: var(--ok-b-0);
   border-radius: var(--ok-br);
+  border-radius: if(
+    supports(corner-shape: squircle) and style(--ok-cs: squircle):
+      calc(var(--ok-br) * var(--ok-cs-scale));
+    else: var(--ok-br)
+  );
+  corner-shape: var(--ok-cs);
   color: var(--ok-tc-0);
   min-width: 25ch;
 }
@@ -406,6 +418,12 @@ input[type="range"]::-webkit-slider-runnable-track {
   cursor: pointer;
   -webkit-appearance: none;
   border-radius: var(--ok-br);
+  border-radius: if(
+    supports(corner-shape: squircle) and style(--ok-cs: squircle):
+      calc(var(--ok-br) * var(--ok-cs-scale));
+    else: var(--ok-br)
+  );
+  corner-shape: var(--ok-cs);
   border: var(--ok-b-0);
   background-color: var(--ok-bg-1);
   background-image: linear-gradient(var(--ok-bg-1), var(--ok-bg-1));
@@ -420,6 +438,12 @@ input[type="range"]::-moz-range-track {
   cursor: pointer;
   -moz-appearance: none;
   border-radius: var(--ok-br);
+  border-radius: if(
+    supports(corner-shape: squircle) and style(--ok-cs: squircle):
+      calc(var(--ok-br) * var(--ok-cs-scale));
+    else: var(--ok-br)
+  );
+  corner-shape: var(--ok-cs);
   border: var(--ok-b-0);
   background-color: var(--ok-bg-1);
   background-image: linear-gradient(var(--ok-bg-1), var(--ok-bg-1));
@@ -433,6 +457,12 @@ input[type="range"]::-ms-track {
   cursor: pointer;
   -ms-appearance: none;
   border-radius: var(--ok-br);
+  border-radius: if(
+    supports(corner-shape: squircle) and style(--ok-cs: squircle):
+      calc(var(--ok-br) * var(--ok-cs-scale));
+    else: var(--ok-br)
+  );
+  corner-shape: var(--ok-cs);
   border: var(--ok-b-0);
   background-color: var(--ok-bg-1);
   background-image: linear-gradient(var(--ok-bg-1), var(--ok-bg-1));
@@ -528,6 +558,12 @@ select {
   appearance: none;
   border: var(--ok-b-0);
   border-radius: var(--ok-br);
+  border-radius: if(
+    supports(corner-shape: squircle) and style(--ok-cs: squircle):
+      calc(var(--ok-br) * var(--ok-cs-scale));
+    else: var(--ok-br)
+  );
+  corner-shape: var(--ok-cs);
   background-color: var(--ok-bg-0);
   min-height: 2.5rem;
   color: var(--ok-tc-0);
@@ -555,6 +591,12 @@ select:not([multiple]):disabled {
 
 select[multiple] {
   border-radius: var(--ok-br);
+  border-radius: if(
+    supports(corner-shape: squircle) and style(--ok-cs: squircle):
+      calc(var(--ok-br) * var(--ok-cs-scale));
+    else: var(--ok-br)
+  );
+  corner-shape: var(--ok-cs);
 }
 
 select[multiple]:disabled {
@@ -578,6 +620,12 @@ textarea {
   background: var(--ok-bg-0);
   border: var(--ok-b-0);
   border-radius: var(--ok-br);
+  border-radius: if(
+    supports(corner-shape: squircle) and style(--ok-cs: squircle):
+      calc(var(--ok-br) * var(--ok-cs-scale));
+    else: var(--ok-br)
+  );
+  corner-shape: var(--ok-cs);
   color: var(--ok-tc-0);
   /* the 2px is for top and bottom borders */
   min-height: calc(2.5rem - 2px);
@@ -594,6 +642,12 @@ input[type="reset"] {
   display: inline-block;
   background-color: var(--ok-accent-0);
   border-radius: var(--ok-br);
+  border-radius: if(
+    supports(corner-shape: squircle) and style(--ok-cs: squircle):
+      calc(var(--ok-br) * var(--ok-cs-scale));
+    else: var(--ok-br)
+  );
+  corner-shape: var(--ok-cs);
   color: #fff;
   font-weight: var(--ok-fw-1);
   height: 2.5rem;
@@ -607,6 +661,12 @@ input::-webkit-file-upload-button {
   display: inline-block;
   background-color: var(--ok-accent-0);
   border-radius: var(--ok-br);
+  border-radius: if(
+    supports(corner-shape: squircle) and style(--ok-cs: squircle):
+      calc(var(--ok-br) * var(--ok-cs-scale));
+    else: var(--ok-br)
+  );
+  corner-shape: var(--ok-cs);
   color: #fff;
   font-weight: var(--ok-fw-1);
   height: 2.5rem;
