@@ -7,812 +7,829 @@
 
 @import url("https://rsms.me/inter/inter.css");
 
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-
-/* Document
-   ========================================================================== */
-
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
-
-html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
-}
-
-/* Sections
-   ========================================================================== */
-
-/**
- * Remove the margin in all browsers.
- */
-
-body {
-  margin: 0;
-}
-
-/**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Firefox, and Safari.
- */
-
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-/* Grouping content
-   ========================================================================== */
-
-/**
- * Add the correct box sizing in Firefox.
- */
-
-hr {
-  box-sizing: content-box;
-  height: 0;
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-
-pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-}
-
-/* Text-level semantics
-   ========================================================================== */
-
-/**
- * Add the correct text decoration in Chrome, Opera, and Safari.
- */
-
-abbr[title] {
-  -webkit-text-decoration: underline dotted;
-  text-decoration: underline dotted;
-}
-
-/**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
-
-b,
-strong {
-  font-weight: bolder;
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-
-code,
-kbd,
-samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-}
-
-/**
- * Add the correct font size in all browsers.
- */
-
-small {
-  font-size: 80%;
-}
-
-/**
- * Prevent `sub` and `sup` elements from affecting the line height in
- * all browsers.
- */
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-/* Interactive
-   ========================================================================== */
-
 /*
- * Add the correct display in all browsers.
- */
+Everything sits in the "ok" layer, so any style you write outside a layer
+wins over OK.css, whatever its specificity.
+*/
+@layer ok {
+  /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
-summary {
-  display: list-item;
-}
+  /* Document
+     ========================================================================== */
 
-/* Misc
-   ========================================================================== */
+  /**
+   * 1. Correct the line height in all browsers.
+   * 2. Prevent adjustments of font size after orientation changes in iOS.
+   */
 
-/**
- * Keep `hidden` working on elements this framework sets `display` on.
- */
+  html {
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+  }
 
-[hidden] {
-  display: none;
-}
+  /* Sections
+     ========================================================================== */
 
-/* CSS Variables
-   ========================================================================== */
+  /**
+   * Remove the margin in all browsers.
+   */
 
-:root {
-  /* let the browser match native UI (scrollbars, form controls, Safari chrome) to light/dark */
-  color-scheme: light dark;
+  body {
+    margin: 0;
+  }
 
-  /* CONSTANTS */
-  /* ================================== */
+  /**
+   * Correct the font size and margin on `h1` elements within `section` and
+   * `article` contexts in Chrome, Firefox, and Safari.
+   */
 
-  /* font */
-  --ok-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-    "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji";
-  --ok-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Ubuntu Mono",
-    "Liberation Mono", "Courier New", Courier, monospace;
+  h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+  }
 
-  /* font-weight */
-  /* body */
-  --ok-fw-0: 400;
-  /* buttons */
-  --ok-fw-1: 600;
-  /* bold */
-  --ok-fw-2: 600;
-  /* headings */
-  --ok-fw-3: 600;
+  /* Grouping content
+     ========================================================================== */
 
-  /* font-size */
-  --ok-fs-0: 1.875rem; /* 30 */
-  --ok-fs-1: 1.25rem; /* 20 */
-  --ok-fs-2: 1rem; /* 16 */
-  --ok-fs-3: 1rem; /* 16 */
-  --ok-fs-4: 1rem; /* 16 */
-  --ok-fs-5: 0.875rem; /* 14 */
+  /**
+   * Add the correct box sizing in Firefox.
+   */
 
-  /* border-radius */
-  --ok-br: 0.25rem;
-  /* corner-shape: squircle where supported (Chromium 139+), plain rounded corners elsewhere; set to `round` to opt out */
-  --ok-cs: squircle;
-  /* squircles look less rounded at the same radius; scale --ok-br by this to visually match round corners */
-  --ok-cs-scale: 1.75;
+  hr {
+    box-sizing: content-box;
+    height: 0;
+  }
 
-  /* spacing */
-  --ok-s-0: 0;
-  --ok-s-1: 0.25rem; /* 4 */
-  --ok-s-2: 0.5rem; /* 8 */
-  --ok-s-3: 1rem; /* 16 */
-  --ok-s-4: 1.5rem; /* 24 */
-  --ok-s-5: 2rem; /* 32 */
-  --ok-s-6: 2.5rem; /* 40 */
+  /**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
 
-  /* VARIABLES */
-  /* ================================== */
+  pre {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
 
-  /* line heights */
-  /* multipliers chosen to land on whole pixels at the default sizes */
-  --ok-lh-body: 1.625; /* 16/26 */
-  --ok-lh-heading: 1.25; /* h3–h6: 16/20; h1 and h2 set their own below */
-  /* small text, captions and code: 14/24 */
-  --ok-lh-small: 1.5rem;
+  /* Text-level semantics
+     ========================================================================== */
 
-  /* text highlight background color */
-  --ok-t-hl: #ffcf30;
+  /**
+   * Add the correct text decoration in Chrome, Opera, and Safari.
+   */
 
-  /* button backgrounds */
-  --ok-accent-0: #3e67fa;
-  --ok-accent-1: #2c4ee0;
+  abbr[title] {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
 
-  /* link color */
-  --ok-tc-accent: #3173de;
+  /**
+   * Add the correct font weight in Chrome, Edge, and Safari.
+   */
 
-  /* code color */
-  --ok-tc-code: #c23a30;
+  b,
+  strong {
+    font-weight: bolder;
+  }
 
-  /* headings, bold text */
-  --ok-tc-0: #000000;
-  /* body text, slightly softer than headings */
-  --ok-tc-body: #202020;
-  /* secondary text color */
-  --ok-tc-1: #747474;
-  /* tertiary text color (for disabled fields, placeholder text) */
-  --ok-tc-2: #767676;
+  /**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
 
-  /* background color */
-  --ok-bg-0: #ffffff;
-  --ok-bg-1: #f0f0f0;
-  --ok-bg-2: #cccccc;
+  code,
+  kbd,
+  samp {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
 
-  /* border */
-  --ok-b-0: 1px solid #949494;
-  /* border hover */
-  --ok-b-1: 1px solid #848484;
-  /* horizontal rules */
-  --ok-rule: #cbcbcb;
+  /**
+   * Add the correct font size in all browsers.
+   */
+
+  small {
+    font-size: 80%;
+  }
+
+  /**
+   * Prevent `sub` and `sup` elements from affecting the line height in
+   * all browsers.
+   */
+
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+
+  sub {
+    bottom: -0.25em;
+  }
+
+  sup {
+    top: -0.5em;
+  }
+
+  /* Interactive
+     ========================================================================== */
 
   /*
-  down arrow for dropdown menu input
-  fill matches --ok-tc-1
-  */
-  --ok-down-0: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6h0l4-4h1s0 0 0 0v1-1L6 7s0 0 0 0L1 2h1l4 4z' fill='%23747474'/%3E%3C/svg%3E");
-  /* fill matches --ok-tc-2 for disabled states */
-  --ok-down-1: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6h0l4-4h1s0 0 0 0v1-1L6 7s0 0 0 0L1 2h1l4 4z' fill='%23767676'/%3E%3C/svg%3E");
-}
+   * Add the correct display in all browsers.
+   */
 
-@media (prefers-color-scheme: dark) {
+  summary {
+    display: list-item;
+  }
+
+  /* Misc
+     ========================================================================== */
+
+  /**
+   * Keep `hidden` working on elements this framework sets `display` on.
+   */
+
+  [hidden] {
+    display: none;
+  }
+
+  /* CSS Variables
+     ========================================================================== */
+
   :root {
+    /* let the browser match native UI (scrollbars, form controls, Safari chrome) to light/dark */
+    color-scheme: light dark;
+
+    /* CONSTANTS */
+    /* ================================== */
+
+    /* font */
+    --ok-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol", "Noto Color Emoji";
+    --ok-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Ubuntu Mono",
+      "Liberation Mono", "Courier New", Courier, monospace;
+
+    /* font-weight */
+    /* body */
+    --ok-fw-0: 400;
+    /* buttons */
+    --ok-fw-1: 600;
+    /* bold */
+    --ok-fw-2: 600;
+    /* headings */
+    --ok-fw-3: 600;
+
+    /* font-size */
+    --ok-fs-0: 1.875rem; /* 30 */
+    --ok-fs-1: 1.25rem; /* 20 */
+    --ok-fs-2: 1rem; /* 16 */
+    --ok-fs-3: 1rem; /* 16 */
+    --ok-fs-4: 1rem; /* 16 */
+    --ok-fs-5: 0.875rem; /* 14 */
+
+    /* border-radius */
+    --ok-br: 0.25rem;
+    /* corner-shape: squircle where supported (Chromium 139+), plain rounded corners elsewhere; set to `round` to opt out */
+    --ok-cs: squircle;
+    /* squircles look less rounded at the same radius; scale --ok-br by this to visually match round corners */
+    --ok-cs-scale: 1.75;
+
+    /* spacing */
+    --ok-s-0: 0;
+    --ok-s-1: 0.25rem; /* 4 */
+    --ok-s-2: 0.5rem; /* 8 */
+    --ok-s-3: 1rem; /* 16 */
+    --ok-s-4: 1.5rem; /* 24 */
+    --ok-s-5: 2rem; /* 32 */
+    --ok-s-6: 2.5rem; /* 40 */
+
+    /* VARIABLES */
+    /* ================================== */
+
+    /* line heights */
+    /* multipliers chosen to land on whole pixels at the default sizes */
+    --ok-lh-body: 1.625; /* 16/26 */
+    --ok-lh-heading: 1.25; /* h3–h6: 16/20; h1 and h2 set their own below */
+    /* small text, captions and code: 14/24 */
+    --ok-lh-small: 1.5rem;
+
+    /* text highlight background color */
+    --ok-t-hl: #ffcf30;
+
+    /* button backgrounds */
+    --ok-accent-0: #3e67fa;
+    --ok-accent-1: #2c4ee0;
+
+    /* link color */
+    --ok-tc-accent: #3173de;
+
+    /* code color */
+    --ok-tc-code: #c23a30;
+
+    /* headings, bold text */
+    --ok-tc-0: #000000;
+    /* body text, slightly softer than headings */
+    --ok-tc-body: #202020;
+    /* secondary text color */
+    --ok-tc-1: #747474;
+    /* tertiary text color (for disabled fields, placeholder text) */
+    --ok-tc-2: #767676;
+
+    /* background color */
+    --ok-bg-0: #ffffff;
+    --ok-bg-1: #f0f0f0;
+    --ok-bg-2: #cccccc;
+
+    /* border */
+    --ok-b-0: 1px solid #949494;
+    /* border hover */
+    --ok-b-1: 1px solid #848484;
+    /* horizontal rules */
+    --ok-rule: #cbcbcb;
+
     /*
-    Dark mode has its own values: light text on black looks brighter than the
-    same values reversed, so neutrals come down, and saturated colors keep their
-    lightness and hue but lose some saturation. Every text pair meets WCAG AA.
+    down arrow for dropdown menu input
+    fill matches --ok-tc-1
     */
-    --ok-tc-accent: #719ce2;
-    --ok-tc-code: #d56f67;
-    --ok-tc-0: #f2f2f2;
-    --ok-tc-body: #b8b8b8;
-    --ok-tc-1: #8c8c8c;
-    --ok-tc-2: #7a7a7a;
-
-    --ok-bg-0: #000000;
-    --ok-bg-1: #212121;
-    --ok-bg-2: #3e3e3e;
-
-    --ok-b-0: 1px solid #636363;
-    --ok-b-1: 1px solid #868686;
-    --ok-rule: #747474;
-
-    --ok-accent-0: #4667c9;
-    --ok-accent-1: #4b6dcf;
-    --ok-t-hl: #e5c569;
-
-    --ok-down-0: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6h0l4-4h1s0 0 0 0v1-1L6 7s0 0 0 0L1 2h1l4 4z' fill='%238c8c8c'/%3E%3C/svg%3E");
-    --ok-down-1: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6h0l4-4h1s0 0 0 0v1-1L6 7s0 0 0 0L1 2h1l4 4z' fill='%237a7a7a'/%3E%3C/svg%3E");
+    --ok-down-0: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6h0l4-4h1s0 0 0 0v1-1L6 7s0 0 0 0L1 2h1l4 4z' fill='%23747474'/%3E%3C/svg%3E");
+    /* fill matches --ok-tc-2 for disabled states */
+    --ok-down-1: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6h0l4-4h1s0 0 0 0v1-1L6 7s0 0 0 0L1 2h1l4 4z' fill='%23767676'/%3E%3C/svg%3E");
   }
-}
 
-/* Base Settings
-   ========================================================================== */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      /*
+      Dark mode has its own values: light text on black looks brighter than the
+      same values reversed, so neutrals come down, and saturated colors keep their
+      lightness and hue but lose some saturation. Every text pair meets WCAG AA.
+      */
+      --ok-tc-accent: #719ce2;
+      --ok-tc-code: #d56f67;
+      --ok-tc-0: #f2f2f2;
+      --ok-tc-body: #b8b8b8;
+      --ok-tc-1: #8c8c8c;
+      --ok-tc-2: #7a7a7a;
 
-*,
-::after,
-::before {
-  box-sizing: border-box;
-}
+      --ok-bg-0: #000000;
+      --ok-bg-1: #212121;
+      --ok-bg-2: #3e3e3e;
 
-/* https://www.smashingmagazine.com/2019/07/margins-in-css/ */
-/* https://alistapart.com/article/settingtypeontheweb/ */
-* {
-  margin: 0;
-  padding: 0;
-}
+      --ok-b-0: 1px solid #636363;
+      --ok-b-1: 1px solid #868686;
+      --ok-rule: #747474;
 
-html {
-  font-family: var(--ok-sans);
-  line-height: var(--ok-lh-body);
-  font-weight: var(--ok-fw-0);
-  color: var(--ok-tc-body);
-  background-color: var(--ok-bg-0);
+      --ok-accent-0: #4667c9;
+      --ok-accent-1: #4b6dcf;
+      --ok-t-hl: #e5c569;
 
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-  text-rendering: optimizeLegibility;
-}
+      --ok-down-0: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6h0l4-4h1s0 0 0 0v1-1L6 7s0 0 0 0L1 2h1l4 4z' fill='%238c8c8c'/%3E%3C/svg%3E");
+      --ok-down-1: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6h0l4-4h1s0 0 0 0v1-1L6 7s0 0 0 0L1 2h1l4 4z' fill='%237a7a7a'/%3E%3C/svg%3E");
+    }
+  }
 
-@media (prefers-reduced-motion: no-preference) {
+  /* Base Settings
+     ========================================================================== */
+
+  *,
+  ::after,
+  ::before {
+    box-sizing: border-box;
+  }
+
+  /* https://www.smashingmagazine.com/2019/07/margins-in-css/ */
+  /* https://alistapart.com/article/settingtypeontheweb/ */
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
   html {
-    scroll-behavior: smooth;
+    font-family: var(--ok-sans);
+    line-height: var(--ok-lh-body);
+    font-weight: var(--ok-fw-0);
+    color: var(--ok-tc-body);
+    background-color: var(--ok-bg-0);
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    /* break long URLs and words instead of overflowing on small screens */
+    overflow-wrap: break-word;
   }
-}
 
-@supports (font-variation-settings: normal) {
-  html {
-    font-family: "Inter var", var(--ok-sans);
-  }
-}
-
-img,
-svg,
-video,
-canvas,
-audio,
-iframe,
-embed,
-object {
-  display: block;
-}
-
-img,
-video {
-  max-width: 100%;
-  height: auto;
-}
-
-body {
-  padding: var(--ok-s-3);
-  /* keep content clear of notches and home indicators with viewport-fit=cover */
-  padding: max(var(--ok-s-3), env(safe-area-inset-top))
-    max(var(--ok-s-3), env(safe-area-inset-right))
-    max(var(--ok-s-3), env(safe-area-inset-bottom))
-    max(var(--ok-s-3), env(safe-area-inset-left));
-  max-width: 65ch;
-  margin: auto;
-}
-
-article {
-  padding-bottom: var(--ok-s-6);
-}
-
-/* Typography
-   ========================================================================== */
-
-h1 {
-  font-size: var(--ok-fs-0);
-  /* Remove margins added by normalize.css  */
-  margin: 0;
-}
-h2 {
-  font-size: var(--ok-fs-1);
-}
-h3 {
-  font-size: var(--ok-fs-2);
-}
-h4 {
-  font-size: var(--ok-fs-3);
-}
-h5 {
-  font-size: var(--ok-fs-4);
-}
-h6 {
-  font-size: var(--ok-fs-5);
-  font-weight: var(--ok-fw-1);
-  color: var(--ok-tc-1);
-}
-
-/* h6 stays muted (see above) */
-h1,
-h2,
-h3,
-h4,
-h5,
-strong,
-b,
-dt {
-  color: var(--ok-tc-0);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: var(--ok-lh-heading);
-  font-weight: var(--ok-fw-3);
-  margin-top: var(--ok-s-5);
-  margin-bottom: var(--ok-s-2);
-  text-wrap: balance;
-}
-
-h1 {
-  line-height: 1.2; /* 30/36 */
-  letter-spacing: -0.02em;
-  margin-top: var(--ok-s-6);
-  margin-bottom: var(--ok-s-3);
-}
-
-h2 {
-  line-height: 1.3; /* 20/26 */
-  margin-top: 3.5rem; /* 56 */
-  margin-bottom: var(--ok-s-3);
-}
-
-/* a title followed by its date or byline */
-header > h1:has(+ *) {
-  margin-bottom: var(--ok-s-1);
-}
-
-h1 + *,
-h2 + *,
-h3 + *,
-h4 + *,
-h5 + *,
-h6 + *,
-hr + * {
-  margin-top: 0;
-}
-
-p {
-  font-size: var(--ok-fs-4);
-}
-
-/* avoid a lone word on the last line */
-p,
-li,
-blockquote,
-figcaption {
-  text-wrap: pretty;
-}
-
-small {
-  font-size: var(--ok-fs-5);
-}
-
-b,
-strong,
-dt {
-  font-weight: var(--ok-fw-2);
-}
-
-/* https://csswizardry.com/2012/06/single-direction-margin-declarations/ */
-/* Add bottom margin to most block-level elements */
-/* https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements */
-
-address,
-article,
-aside,
-blockquote,
-details,
-dialog,
-dd,
-dl,
-div,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-hr,
-/* li, ignored */
-main,
-nav,
-ol,
-p,
-pre,
-section,
-summary,
-ul,
-/* other elements */
-img,
-svg,
-video,
-canvas,
-audio,
-iframe,
-embed,
-object {
-  margin-bottom: var(--ok-s-4);
-}
-
-address:last-child,
-article:last-child,
-aside:last-child,
-blockquote:last-child,
-details:last-child,
-dialog:last-child,
-dd:last-child,
-div:last-child,
-dl:last-child,
-dt:last-child,
-figcaption:last-child,
-figure:last-child,
-footer:last-child,
-h1:last-child,
-h2:last-child,
-h3:last-child,
-h4:last-child,
-h5:last-child,
-h6:last-child,
-header:last-child,
-hgroup:last-child,
-hr:last-child,
-main:last-child,
-nav:last-child,
-ol:last-child,
-p:last-child,
-pre:last-child,
-section:last-child,
-ul:last-child {
-  margin-bottom: 0;
-}
-
-/* Code
-   ========================================================================== */
-
-code,
-samp {
-  padding: 0.125rem 0.25rem;
-  color: var(--ok-tc-code);
-}
-
-pre,
-code,
-samp {
-  font-family: var(--ok-mono);
-  /*
-  87.5% = 7/8
-  If 1rem is 16px, font-size is 14px.
-  */
-  font-size: 87.5%;
-  line-height: var(--ok-lh-small);
-  background-color: var(--ok-bg-1);
-  border-radius: var(--ok-br);
-  border-radius: if(
-    supports(corner-shape: squircle) and style(--ok-cs: squircle):
-      calc(var(--ok-br) * var(--ok-cs-scale));
-    else: var(--ok-br)
-  );
-  corner-shape: var(--ok-cs);
-  text-transform: none;
-}
-
-pre {
-  padding: var(--ok-s-3);
-  color: var(--ok-tc-0);
-  white-space: pre;
-  overflow-x: auto;
-}
-
-var {
-  font-family: var(--ok-mono);
-  color: var(--ok-tc-0);
-  font-style: normal;
-}
-
-pre code {
-  background: inherit;
-  font-size: inherit;
-  color: inherit;
-  border: 0;
-  padding: 0;
-  margin: 0;
-}
-
-code pre {
-  display: inline;
-  background: inherit;
-  font-size: inherit;
-  color: inherit;
-  border: 0;
-  padding: 0;
-  margin: 0;
-}
-
-kbd {
-  background-color: var(--ok-bg-1);
-  border: var(--ok-b-0);
-  border-radius: var(--ok-br);
-  border-radius: if(
-    supports(corner-shape: squircle) and style(--ok-cs: squircle):
-      calc(var(--ok-br) * var(--ok-cs-scale));
-    else: var(--ok-br)
-  );
-  corner-shape: var(--ok-cs);
-  border-bottom: 2px solid var(--ok-bg-2);
-  padding: var(--ok-s-1);
-  font-family: var(--ok-sans);
-  color: var(--ok-tc-0);
-}
-
-/* Links
-   ========================================================================== */
-
-a {
-  color: var(--ok-tc-accent);
-  font-weight: 500;
-  /* a thin underline, high enough to cut through descenders, that thickens on hover */
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-  transition: text-decoration-thickness 120ms ease;
-}
-
-a:hover {
-  text-decoration-thickness: 1.5px;
-}
-
-a:visited {
-  color: var(--ok-tc-accent);
-}
-
-a code,
-a samp,
-a mark {
-  color: var(--ok-tc-accent);
-}
-
-/* Lists
-   ========================================================================== */
-
-ul,
-ol {
-  padding-inline-start: 1.25rem; /* 20 */
-}
-
-li::marker {
-  color: var(--ok-tc-1);
-}
-
-nav ul {
-  padding-inline-start: 0;
-}
-
-nav ul li {
-  display: inline;
-  margin-inline-end: 1em;
-}
-
-li p {
-  margin-bottom: 0;
-}
-
-/* a list item made only of small text (e.g. footnotes) gets a matching marker */
-li:has(> small:only-child)::marker {
-  font-size: var(--ok-fs-5);
-}
-
-/*
-margin-top instead of margin-bottom to add space when
-a <ul> or <ol> is added as a nested list.
-*/
-li,
-li p + p {
-  margin-top: var(--ok-s-1);
-}
-
-/* Images, figures, and media
-   ========================================================================== */
-
-img,
-video,
-audio {
-  margin-inline: auto;
-}
-
-img {
-  border-radius: var(--ok-br);
-  border-radius: if(
-    supports(corner-shape: squircle) and style(--ok-cs: squircle):
-      calc(var(--ok-br) * var(--ok-cs-scale));
-    else: var(--ok-br)
-  );
-  corner-shape: var(--ok-cs);
-}
-
-figure > img:not(:last-child) {
-  margin-bottom: var(--ok-s-1);
-}
-
-figure > figcaption {
-  text-align: center;
-}
-
-/* Other
-   ========================================================================== */
-
-time,
-figcaption {
-  font-size: var(--ok-fs-5);
-  color: var(--ok-tc-1);
-}
-
-small,
-time,
-figcaption,
-footer,
-kbd {
-  line-height: var(--ok-lh-small);
-}
-
-mark {
-  padding: 0.125rem 0.25rem;
-  background: var(--ok-t-hl);
-  color: #000000;
-  border-radius: var(--ok-br);
-  border-radius: if(
-    supports(corner-shape: squircle) and style(--ok-cs: squircle):
-      calc(var(--ok-br) * var(--ok-cs-scale));
-    else: var(--ok-br)
-  );
-  corner-shape: var(--ok-cs);
-}
-
-iframe {
-  border: var(--ok-b-0);
-  border-radius: var(--ok-br);
-  border-radius: if(
-    supports(corner-shape: squircle) and style(--ok-cs: squircle):
-      calc(var(--ok-br) * var(--ok-cs-scale));
-    else: var(--ok-br)
-  );
-  corner-shape: var(--ok-cs);
-  width: 100%;
-}
-
-hr {
-  border: none;
-  border-bottom: 1px solid var(--ok-rule);
-  margin-top: var(--ok-s-6);
-}
-
-footer {
-  font-size: var(--ok-fs-5);
-  color: var(--ok-tc-1);
-}
-
-blockquote {
-  position: relative;
-  margin-inline: 0;
-  padding-inline-start: var(--ok-s-3);
-  color: var(--ok-tc-1);
-}
-
-blockquote::before {
-  position: absolute;
-  height: 100%;
-  content: "";
-  width: 2px;
-  inset-inline-start: 0;
-  border-radius: var(--ok-br);
-  border-radius: if(
-    supports(corner-shape: squircle) and style(--ok-cs: squircle):
-      calc(var(--ok-br) * var(--ok-cs-scale));
-    else: var(--ok-br)
-  );
-  corner-shape: var(--ok-cs);
-  background-color: var(--ok-bg-1);
-}
-
-dd {
-  padding-inline-start: var(--ok-s-5);
-}
-
-abbr {
-  cursor: help;
-}
-
-/* Details
-   ========================================================================== */
-
-/*
-Open and close <details> smoothly where the browser can animate to an
-auto height. Elsewhere they open instantly, as before.
-*/
-@supports (interpolate-size: allow-keywords) {
   @media (prefers-reduced-motion: no-preference) {
-    details {
-      interpolate-size: allow-keywords;
+    html {
+      scroll-behavior: smooth;
     }
+  }
 
-    details::details-content {
-      height: 0;
-      overflow: clip;
-      /* keep focus rings on fields inside from being cut off */
-      overflow-clip-margin: 4px;
-      transition:
-        height 200ms ease,
-        content-visibility 200ms ease allow-discrete;
+  @supports (font-variation-settings: normal) {
+    html {
+      font-family: "Inter var", var(--ok-sans);
     }
+  }
 
-    details[open]::details-content {
-      height: auto;
+  img,
+  svg,
+  video,
+  canvas,
+  audio,
+  iframe,
+  embed,
+  object {
+    display: block;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  body {
+    padding: var(--ok-s-3);
+    /* keep content clear of notches and home indicators with viewport-fit=cover */
+    padding: max(var(--ok-s-3), env(safe-area-inset-top))
+      max(var(--ok-s-3), env(safe-area-inset-right))
+      max(var(--ok-s-3), env(safe-area-inset-bottom))
+      max(var(--ok-s-3), env(safe-area-inset-left));
+    max-width: 65ch;
+    margin: auto;
+  }
+
+  article {
+    padding-bottom: var(--ok-s-6);
+  }
+
+  /* Typography
+     ========================================================================== */
+
+  h1 {
+    font-size: var(--ok-fs-0);
+    /* Remove margins added by normalize.css  */
+    margin: 0;
+  }
+  h2 {
+    font-size: var(--ok-fs-1);
+  }
+  h3 {
+    font-size: var(--ok-fs-2);
+  }
+  h4 {
+    font-size: var(--ok-fs-3);
+  }
+  h5 {
+    font-size: var(--ok-fs-4);
+  }
+  h6 {
+    font-size: var(--ok-fs-5);
+    font-weight: var(--ok-fw-1);
+    color: var(--ok-tc-1);
+  }
+
+  /* h6 stays muted (see above) */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  strong,
+  b,
+  dt {
+    color: var(--ok-tc-0);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: var(--ok-lh-heading);
+    font-weight: var(--ok-fw-3);
+    margin-top: var(--ok-s-5);
+    margin-bottom: var(--ok-s-2);
+    text-wrap: balance;
+  }
+
+  h1 {
+    line-height: 1.2; /* 30/36 */
+    letter-spacing: -0.02em;
+    margin-top: var(--ok-s-6);
+    margin-bottom: var(--ok-s-3);
+  }
+
+  h2 {
+    line-height: 1.3; /* 20/26 */
+    margin-top: 3.5rem; /* 56 */
+    margin-bottom: var(--ok-s-3);
+  }
+
+  /* a title followed by its date or byline */
+  header > h1:has(+ *) {
+    margin-bottom: var(--ok-s-1);
+  }
+
+  h1 + *,
+  h2 + *,
+  h3 + *,
+  h4 + *,
+  h5 + *,
+  h6 + *,
+  hr + * {
+    margin-top: 0;
+  }
+
+  p {
+    font-size: var(--ok-fs-4);
+  }
+
+  /* avoid a lone word on the last line */
+  p,
+  li,
+  blockquote,
+  figcaption {
+    text-wrap: pretty;
+  }
+
+  small {
+    font-size: var(--ok-fs-5);
+  }
+
+  b,
+  strong,
+  dt {
+    font-weight: var(--ok-fw-2);
+  }
+
+  /* https://csswizardry.com/2012/06/single-direction-margin-declarations/ */
+  /* Add bottom margin to most block-level elements */
+  /* https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements */
+
+  address,
+  article,
+  aside,
+  blockquote,
+  details,
+  dialog,
+  dd,
+  dl,
+  div,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  hr,
+  /* li, ignored */
+  main,
+  nav,
+  ol,
+  p,
+  pre,
+  section,
+  summary,
+  ul,
+  /* other elements */
+  img,
+  svg,
+  video,
+  canvas,
+  audio,
+  iframe,
+  embed,
+  object {
+    margin-bottom: var(--ok-s-4);
+  }
+
+  address:last-child,
+  article:last-child,
+  aside:last-child,
+  blockquote:last-child,
+  details:last-child,
+  dialog:last-child,
+  dd:last-child,
+  div:last-child,
+  dl:last-child,
+  dt:last-child,
+  figcaption:last-child,
+  figure:last-child,
+  footer:last-child,
+  h1:last-child,
+  h2:last-child,
+  h3:last-child,
+  h4:last-child,
+  h5:last-child,
+  h6:last-child,
+  header:last-child,
+  hgroup:last-child,
+  hr:last-child,
+  main:last-child,
+  nav:last-child,
+  ol:last-child,
+  p:last-child,
+  pre:last-child,
+  section:last-child,
+  ul:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Code
+     ========================================================================== */
+
+  code,
+  samp {
+    padding: 0.125rem 0.25rem;
+    color: var(--ok-tc-code);
+  }
+
+  pre,
+  code,
+  samp {
+    font-family: var(--ok-mono);
+    /*
+    87.5% = 7/8
+    If 1rem is 16px, font-size is 14px.
+    */
+    font-size: 87.5%;
+    line-height: var(--ok-lh-small);
+    background-color: var(--ok-bg-1);
+    border-radius: var(--ok-br);
+    border-radius: if(
+      supports(corner-shape: squircle) and style(--ok-cs: squircle):
+        calc(var(--ok-br) * var(--ok-cs-scale));
+      else: var(--ok-br)
+    );
+    corner-shape: var(--ok-cs);
+    text-transform: none;
+  }
+
+  pre {
+    padding: var(--ok-s-3);
+    color: var(--ok-tc-0);
+    white-space: pre;
+    overflow-x: auto;
+  }
+
+  /* code reads left to right, even on right-to-left pages */
+  pre:not([dir]),
+  code:not([dir]),
+  kbd:not([dir]),
+  samp:not([dir]) {
+    direction: ltr;
+    unicode-bidi: isolate;
+  }
+
+  var {
+    font-family: var(--ok-mono);
+    color: var(--ok-tc-0);
+    font-style: normal;
+  }
+
+  pre code {
+    background: inherit;
+    font-size: inherit;
+    color: inherit;
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  code pre {
+    display: inline;
+    background: inherit;
+    font-size: inherit;
+    color: inherit;
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  kbd {
+    background-color: var(--ok-bg-1);
+    border: var(--ok-b-0);
+    border-radius: var(--ok-br);
+    border-radius: if(
+      supports(corner-shape: squircle) and style(--ok-cs: squircle):
+        calc(var(--ok-br) * var(--ok-cs-scale));
+      else: var(--ok-br)
+    );
+    corner-shape: var(--ok-cs);
+    border-bottom: 2px solid var(--ok-bg-2);
+    padding: var(--ok-s-1);
+    font-family: var(--ok-sans);
+    color: var(--ok-tc-0);
+  }
+
+  /* Links
+     ========================================================================== */
+
+  a {
+    color: var(--ok-tc-accent);
+    font-weight: 500;
+    /* a thin underline, high enough to cut through descenders, that thickens on hover */
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    transition: text-decoration-thickness 120ms ease;
+  }
+
+  a:hover {
+    text-decoration-thickness: 1.5px;
+  }
+
+  a:visited {
+    color: var(--ok-tc-accent);
+  }
+
+  a code,
+  a samp,
+  a mark {
+    color: var(--ok-tc-accent);
+  }
+
+  /* Lists
+     ========================================================================== */
+
+  ul,
+  ol {
+    padding-inline-start: 1.25rem; /* 20 */
+  }
+
+  li::marker {
+    color: var(--ok-tc-1);
+  }
+
+  nav ul {
+    padding-inline-start: 0;
+  }
+
+  nav ul li {
+    display: inline;
+    margin-inline-end: 1em;
+  }
+
+  li p {
+    margin-bottom: 0;
+  }
+
+  /* a list item made only of small text (e.g. footnotes) gets a matching marker */
+  li:has(> small:only-child)::marker {
+    font-size: var(--ok-fs-5);
+  }
+
+  /*
+  margin-top instead of margin-bottom to add space when
+  a <ul> or <ol> is added as a nested list.
+  */
+  li,
+  li p + p {
+    margin-top: var(--ok-s-1);
+  }
+
+  /* Images, figures, and media
+     ========================================================================== */
+
+  img,
+  video,
+  audio {
+    margin-inline: auto;
+  }
+
+  img {
+    border-radius: var(--ok-br);
+    border-radius: if(
+      supports(corner-shape: squircle) and style(--ok-cs: squircle):
+        calc(var(--ok-br) * var(--ok-cs-scale));
+      else: var(--ok-br)
+    );
+    corner-shape: var(--ok-cs);
+  }
+
+  figure > img:not(:last-child) {
+    margin-bottom: var(--ok-s-1);
+  }
+
+  figure > figcaption {
+    text-align: center;
+  }
+
+  /* Other
+     ========================================================================== */
+
+  time,
+  figcaption {
+    font-size: var(--ok-fs-5);
+    color: var(--ok-tc-1);
+  }
+
+  small,
+  time,
+  figcaption,
+  footer,
+  kbd {
+    line-height: var(--ok-lh-small);
+  }
+
+  mark {
+    padding: 0.125rem 0.25rem;
+    background: var(--ok-t-hl);
+    color: #000000;
+    border-radius: var(--ok-br);
+    border-radius: if(
+      supports(corner-shape: squircle) and style(--ok-cs: squircle):
+        calc(var(--ok-br) * var(--ok-cs-scale));
+      else: var(--ok-br)
+    );
+    corner-shape: var(--ok-cs);
+  }
+
+  iframe {
+    border: var(--ok-b-0);
+    border-radius: var(--ok-br);
+    border-radius: if(
+      supports(corner-shape: squircle) and style(--ok-cs: squircle):
+        calc(var(--ok-br) * var(--ok-cs-scale));
+      else: var(--ok-br)
+    );
+    corner-shape: var(--ok-cs);
+    width: 100%;
+  }
+
+  hr {
+    border: none;
+    border-bottom: 1px solid var(--ok-rule);
+    margin-top: var(--ok-s-6);
+  }
+
+  footer {
+    font-size: var(--ok-fs-5);
+    color: var(--ok-tc-1);
+  }
+
+  blockquote {
+    position: relative;
+    margin-inline: 0;
+    padding-inline-start: var(--ok-s-3);
+    color: var(--ok-tc-1);
+  }
+
+  blockquote::before {
+    position: absolute;
+    height: 100%;
+    content: "";
+    width: 2px;
+    inset-inline-start: 0;
+    border-radius: var(--ok-br);
+    border-radius: if(
+      supports(corner-shape: squircle) and style(--ok-cs: squircle):
+        calc(var(--ok-br) * var(--ok-cs-scale));
+      else: var(--ok-br)
+    );
+    corner-shape: var(--ok-cs);
+    background-color: var(--ok-bg-1);
+  }
+
+  dd {
+    padding-inline-start: var(--ok-s-5);
+  }
+
+  abbr {
+    cursor: help;
+  }
+
+  /* Details
+     ========================================================================== */
+
+  /*
+  Open and close <details> smoothly where the browser can animate to an
+  auto height. Elsewhere they open instantly, as before.
+  */
+  @supports (interpolate-size: allow-keywords) {
+    @media (prefers-reduced-motion: no-preference) {
+      details {
+        interpolate-size: allow-keywords;
+      }
+
+      details::details-content {
+        height: 0;
+        overflow: clip;
+        /* keep focus rings on fields inside from being cut off */
+        overflow-clip-margin: 4px;
+        transition:
+          height 200ms ease,
+          content-visibility 200ms ease allow-discrete;
+      }
+
+      details[open]::details-content {
+        height: auto;
+      }
     }
   }
 }

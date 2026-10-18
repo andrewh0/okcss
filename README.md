@@ -27,6 +27,16 @@ For the best results on mobile (especially iOS Safari), pair **OK.css** with the
 
 `viewport-fit=cover` lets the page background extend under the notch and home indicator, and **OK.css** pads the body so your content stays inside the safe area. The `theme-color` values match the default light and dark backgrounds (`--ok-bg-0`); update them if you change it.
 
+### Overriding styles
+
+**OK.css** puts all of its rules in a cascade layer named `ok`. Any CSS you write outside a layer wins, whatever its specificity, so a plain `button { … }` rule overrides ours.
+
+If you use layers yourself, list `ok` first so yours win:
+
+```css
+@layer ok, theme;
+```
+
 ### Right-to-left languages
 
 **OK.css** uses logical properties, so lists, blockquotes, selects and tables flip for right-to-left languages. Set the direction on your `<html>` tag:
