@@ -54,7 +54,6 @@ tfoot tr {
 
 td,
 th {
-  border: var(--ok-b-0) 0;
   text-align: left;
   padding: 0.5rem;
 }

@@ -1,0 +1,68 @@
+/* Playground chrome only. This is a dev tool, not part of OK.css. */
+
+:root {
+  color-scheme: light dark;
+  --pg-bg: #f4f4f3;
+  --pg-fg: #3f3f3f;
+  --pg-line: #dcdcda;
+  --pg-handle: #ff2d6f;
+  font: 12px/1.4 system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --pg-bg: #111;
+    --pg-fg: #b5b5b5;
+    --pg-line: #2a2a2a;
+  }
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  background: var(--pg-bg);
+  color: var(--pg-fg);
+  overflow: hidden;
+}
+
+.stage { display: grid; grid-template-rows: auto 1fr; min-width: 0; min-height: 0; }
+
+.labels { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--pg-line); }
+.label { padding: 6px 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.label b { font-weight: 600; }
+#after-note { opacity: 0.7; }
+
+.panes { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--pg-line); min-height: 0; }
+.pane { position: relative; overflow: hidden; background: var(--pg-bg); }
+.pane iframe {
+  position: absolute; top: 0; left: 50%;
+  border: 0; display: block;
+  transform-origin: top center;
+  background: transparent;
+}
+
+/* single views */
+body[data-view="after"] .labels, body[data-view="before"] .labels,
+body[data-view="after"] .panes, body[data-view="before"] .panes { grid-template-columns: 1fr; }
+body[data-view="after"] [data-side="before"],
+body[data-view="before"] [data-side="after"] { display: none; }
+
+/* before/after wipe: panes stacked, after clipped to the right of the handle */
+body[data-view="wipe"] .panes { grid-template-columns: 1fr; }
+body[data-view="wipe"] .pane { grid-area: 1 / 1; }
+body[data-view="wipe"] .pane[data-side="after"] { clip-path: inset(0 0 0 var(--wipe, 50%)); }
+body[data-view="wipe"] .labels { grid-template-columns: 1fr 1fr; }
+body[data-view="wipe"] .label[data-side="after"] { text-align: right; }
+
+.wipe-handle { display: none; }
+body[data-view="wipe"] .wipe-handle {
+  display: block; position: absolute; top: 0; bottom: 0; left: var(--wipe, 50%);
+  width: 15px; margin-left: -7px; cursor: ew-resize; z-index: 2; touch-action: none;
+}
+body[data-view="wipe"] .wipe-handle::before {
+  content: ""; position: absolute; top: 0; bottom: 0; left: 7px; width: 1px; background: var(--pg-handle);
+}
+body.dragging iframe { pointer-events: none; }
+
+.dials { border-left: 1px solid var(--pg-line); overflow: auto; min-height: 0; }

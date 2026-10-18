@@ -34,14 +34,6 @@ body {
 }
 
 /**
- * Render the `main` element consistently in IE.
- */
-
-main {
-  display: block;
-}
-
-/**
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
@@ -55,14 +47,12 @@ h1 {
    ========================================================================== */
 
 /**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
+ * Add the correct box sizing in Firefox.
  */
 
 hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
+  box-sizing: content-box;
+  height: 0;
 }
 
 /**
@@ -79,23 +69,12 @@ pre {
    ========================================================================== */
 
 /**
- * Remove the gray background on active links in IE 10.
- */
-
-a {
-  background-color: transparent;
-}
-
-/**
- * 1. Remove the bottom border in Chrome 57-
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ * Add the correct text decoration in Chrome, Opera, and Safari.
  */
 
 abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
   -webkit-text-decoration: underline dotted;
-  text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted;
 }
 
 /**
@@ -148,27 +127,8 @@ sup {
   top: -0.5em;
 }
 
-/* Embedded content
-   ========================================================================== */
-
-/**
- * Remove the border on images inside links in IE 10.
- */
-
-img {
-  border-style: none;
-}
-
 /* Interactive
    ========================================================================== */
-
-/*
- * Add the correct display in Edge, IE 10+, and Firefox.
- */
-
-details {
-  display: block;
-}
 
 /*
  * Add the correct display in all browsers.
@@ -182,15 +142,7 @@ summary {
    ========================================================================== */
 
 /**
- * Add the correct display in IE 10+.
- */
-
-template {
-  display: none;
-}
-
-/**
- * Add the correct display in IE 10.
+ * Keep `hidden` working on elements this framework sets `display` on.
  */
 
 [hidden] {
@@ -201,6 +153,9 @@ template {
    ========================================================================== */
 
 :root {
+  /* let the browser match native UI (scrollbars, form controls, Safari chrome) to light/dark */
+  color-scheme: light dark;
+
   /* CONSTANTS */
   /* ================================== */
 
@@ -218,20 +173,24 @@ template {
   /* buttons */
   --ok-fw-1: 600;
   /* bold */
-  --ok-fw-2: 700;
+  --ok-fw-2: 600;
   /* headings */
-  --ok-fw-3: 700;
+  --ok-fw-3: 600;
 
   /* font-size */
-  --ok-fs-0: 2.5rem; /* 40 */
-  --ok-fs-1: 2rem; /* 32 */
-  --ok-fs-2: 1.5rem; /* 24 */
-  --ok-fs-3: 1.25rem; /* 20 */
+  --ok-fs-0: 1.875rem; /* 30 */
+  --ok-fs-1: 1.25rem; /* 20 */
+  --ok-fs-2: 1rem; /* 16 */
+  --ok-fs-3: 1rem; /* 16 */
   --ok-fs-4: 1rem; /* 16 */
-  --ok-fs-5: 0.75rem; /* 12 */
+  --ok-fs-5: 0.875rem; /* 14 */
 
   /* border-radius */
   --ok-br: 0.25rem;
+  /* corner-shape: squircle where supported (Chromium 139+), plain rounded corners elsewhere; set to `round` to opt out */
+  --ok-cs: squircle;
+  /* squircles look less rounded at the same radius; scale --ok-br by this to visually match round corners */
+  --ok-cs-scale: 1.75;
 
   /* spacing */
   --ok-s-0: 0;
@@ -246,15 +205,18 @@ template {
   /* ================================== */
 
   /* line heights */
-  --ok-lh-body: 1.5;
-  --ok-lh-heading: 1.25;
+  /* multipliers chosen to land on whole pixels at the default sizes */
+  --ok-lh-body: 1.625; /* 16/26 */
+  --ok-lh-heading: 1.25; /* h3–h6: 16/20; h1 and h2 set their own below */
+  /* small text, captions and code: 14/24 */
+  --ok-lh-small: 1.5rem;
 
   /* text highlight background color */
   --ok-t-hl: #ffcf30;
 
   /* button backgrounds */
   --ok-accent-0: #3e67fa;
-  --ok-accent-1: #4788ff;
+  --ok-accent-1: #2c4ee0;
 
   /* link color */
   --ok-tc-accent: #3173de;
@@ -262,12 +224,14 @@ template {
   /* code color */
   --ok-tc-code: #c23a30;
 
-  /* primary text color */
+  /* headings, bold text */
   --ok-tc-0: #000000;
+  /* body text, slightly softer than headings */
+  --ok-tc-body: #202020;
   /* secondary text color */
   --ok-tc-1: #747474;
   /* tertiary text color (for disabled fields, placeholder text) */
-  --ok-tc-2: #848484;
+  --ok-tc-2: #767676;
 
   /* background color */
   --ok-bg-0: #ffffff;
@@ -275,9 +239,11 @@ template {
   --ok-bg-2: #cccccc;
 
   /* border */
-  --ok-b-0: 1px solid #cbcbcb;
+  --ok-b-0: 1px solid #949494;
   /* border hover */
   --ok-b-1: 1px solid #848484;
+  /* horizontal rules */
+  --ok-rule: #cbcbcb;
 
   /*
   down arrow for dropdown menu input
@@ -285,26 +251,37 @@ template {
   */
   --ok-down-0: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6h0l4-4h1s0 0 0 0v1-1L6 7s0 0 0 0L1 2h1l4 4z' fill='%23747474'/%3E%3C/svg%3E");
   /* fill matches --ok-tc-2 for disabled states */
-  --ok-down-1: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6h0l4-4h1s0 0 0 0v1-1L6 7s0 0 0 0L1 2h1l4 4z' fill='%23848484'/%3E%3C/svg%3E");
+  --ok-down-1: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6h0l4-4h1s0 0 0 0v1-1L6 7s0 0 0 0L1 2h1l4 4z' fill='%23767676'/%3E%3C/svg%3E");
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --ok-tc-accent: #5c9aff;
-    --ok-tc-code: #ed5853;
-    --ok-tc-0: #ffffff;
-    --ok-tc-1: #ababab;
-    --ok-tc-2: #929292;
+    /*
+    Dark mode has its own values: light text on black looks brighter than the
+    same values reversed, so neutrals come down, and saturated colors keep their
+    lightness and hue but lose some saturation. Every text pair meets WCAG AA.
+    */
+    --ok-tc-accent: #719ce2;
+    --ok-tc-code: #d56f67;
+    --ok-tc-0: #f2f2f2;
+    --ok-tc-body: #b8b8b8;
+    --ok-tc-1: #8c8c8c;
+    --ok-tc-2: #7a7a7a;
 
     --ok-bg-0: #000000;
     --ok-bg-1: #212121;
     --ok-bg-2: #3e3e3e;
 
-    --ok-b-0: 1px solid #747474;
-    --ok-b-1: 1px solid #929292;
+    --ok-b-0: 1px solid #636363;
+    --ok-b-1: 1px solid #868686;
+    --ok-rule: #747474;
 
-    --ok-down-0: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6h0l4-4h1s0 0 0 0v1-1L6 7s0 0 0 0L1 2h1l4 4z' fill='%23ababab'/%3E%3C/svg%3E");
-    --ok-down-1: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6h0l4-4h1s0 0 0 0v1-1L6 7s0 0 0 0L1 2h1l4 4z' fill='%23929292'/%3E%3C/svg%3E");
+    --ok-accent-0: #4667c9;
+    --ok-accent-1: #4b6dcf;
+    --ok-t-hl: #e5c569;
+
+    --ok-down-0: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6h0l4-4h1s0 0 0 0v1-1L6 7s0 0 0 0L1 2h1l4 4z' fill='%238c8c8c'/%3E%3C/svg%3E");
+    --ok-down-1: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6h0l4-4h1s0 0 0 0v1-1L6 7s0 0 0 0L1 2h1l4 4z' fill='%237a7a7a'/%3E%3C/svg%3E");
   }
 }
 
@@ -326,20 +303,23 @@ template {
 
 html {
   font-family: var(--ok-sans);
-  line-sizing: normal;
   line-height: var(--ok-lh-body);
   font-weight: var(--ok-fw-0);
-  color: var(--ok-tc-0);
+  color: var(--ok-tc-body);
   background-color: var(--ok-bg-0);
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
-  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 @supports (font-variation-settings: normal) {
@@ -367,7 +347,12 @@ video {
 
 body {
   padding: var(--ok-s-3);
-  max-width: 80ch;
+  /* keep content clear of notches and home indicators with viewport-fit=cover */
+  padding: max(var(--ok-s-3), env(safe-area-inset-top))
+    max(var(--ok-s-3), env(safe-area-inset-right))
+    max(var(--ok-s-3), env(safe-area-inset-bottom))
+    max(var(--ok-s-3), env(safe-area-inset-left));
+  max-width: 65ch;
   margin: auto;
 }
 
@@ -397,8 +382,20 @@ h5 {
 }
 h6 {
   font-size: var(--ok-fs-5);
-  text-transform: uppercase;
   font-weight: var(--ok-fw-1);
+  color: var(--ok-tc-1);
+}
+
+/* h6 stays muted (see above) */
+h1,
+h2,
+h3,
+h4,
+h5,
+strong,
+b,
+dt {
+  color: var(--ok-tc-0);
 }
 
 h1,
@@ -409,8 +406,27 @@ h5,
 h6 {
   line-height: var(--ok-lh-heading);
   font-weight: var(--ok-fw-3);
+  margin-top: var(--ok-s-5);
+  margin-bottom: var(--ok-s-2);
+  text-wrap: balance;
+}
+
+h1 {
+  line-height: 1.2; /* 30/36 */
+  letter-spacing: -0.02em;
   margin-top: var(--ok-s-6);
   margin-bottom: var(--ok-s-3);
+}
+
+h2 {
+  line-height: 1.3; /* 20/26 */
+  margin-top: 3.5rem; /* 56 */
+  margin-bottom: var(--ok-s-3);
+}
+
+/* a title followed by its date or byline */
+header > h1:has(+ *) {
+  margin-bottom: var(--ok-s-1);
 }
 
 h1 + *,
@@ -425,6 +441,14 @@ hr + * {
 
 p {
   font-size: var(--ok-fs-4);
+}
+
+/* avoid a lone word on the last line */
+p,
+li,
+blockquote,
+figcaption {
+  text-wrap: pretty;
 }
 
 small {
@@ -514,7 +538,7 @@ ul:last-child {
 
 code,
 samp {
-  padding: 0.2em 0.4em;
+  padding: 0.125rem 0.25rem;
   color: var(--ok-tc-code);
 }
 
@@ -527,9 +551,15 @@ samp {
   If 1rem is 16px, font-size is 14px.
   */
   font-size: 87.5%;
-  line-height: var(--ok-lh-body);
+  line-height: var(--ok-lh-small);
   background-color: var(--ok-bg-1);
   border-radius: var(--ok-br);
+  border-radius: if(
+    supports(corner-shape: squircle) and style(--ok-cs: squircle):
+      calc(var(--ok-br) * var(--ok-cs-scale));
+    else: var(--ok-br)
+  );
+  corner-shape: var(--ok-cs);
   text-transform: none;
 }
 
@@ -569,6 +599,12 @@ kbd {
   background-color: var(--ok-bg-1);
   border: var(--ok-b-0);
   border-radius: var(--ok-br);
+  border-radius: if(
+    supports(corner-shape: squircle) and style(--ok-cs: squircle):
+      calc(var(--ok-br) * var(--ok-cs-scale));
+    else: var(--ok-br)
+  );
+  corner-shape: var(--ok-cs);
   border-bottom: 2px solid var(--ok-bg-2);
   padding: var(--ok-s-1);
   font-family: var(--ok-sans);
@@ -579,9 +615,17 @@ kbd {
    ========================================================================== */
 
 a {
-  text-decoration: none;
   color: var(--ok-tc-accent);
-  font-weight: var(--ok-fw-1);
+  font-weight: 500;
+  /* a thin underline, high enough to cut through descenders, that thickens on hover */
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: text-decoration-thickness 120ms ease;
+}
+
+a:hover {
+  text-decoration-thickness: 1.5px;
 }
 
 a:visited {
@@ -599,11 +643,14 @@ a mark {
 
 ul,
 ol {
-  padding-left: var(--ok-s-5);
+  padding-left: 1.25rem; /* 20 */
+}
+
+li::marker {
+  color: var(--ok-tc-1);
 }
 
 nav ul {
-  text-decoration: none;
   padding-left: 0;
 }
 
@@ -616,13 +663,18 @@ li p {
   margin-bottom: 0;
 }
 
+/* a list item made only of small text (e.g. footnotes) gets a matching marker */
+li:has(> small:only-child)::marker {
+  font-size: var(--ok-fs-5);
+}
+
 /*
 margin-top instead of margin-bottom to add space when
 a <ul> or <ol> is added as a nested list.
 */
 li,
 li p + p {
-  margin-top: 0.5em;
+  margin-top: var(--ok-s-1);
 }
 
 /* Images, figures, and media
@@ -637,6 +689,12 @@ audio {
 
 img {
   border-radius: var(--ok-br);
+  border-radius: if(
+    supports(corner-shape: squircle) and style(--ok-cs: squircle):
+      calc(var(--ok-br) * var(--ok-cs-scale));
+    else: var(--ok-br)
+  );
+  corner-shape: var(--ok-cs);
 }
 
 figure > img:not(:last-child) {
@@ -656,22 +714,43 @@ figcaption {
   color: var(--ok-tc-1);
 }
 
+small,
+time,
+figcaption,
+footer,
+kbd {
+  line-height: var(--ok-lh-small);
+}
+
 mark {
-  padding: 0.2em 0.4em;
+  padding: 0.125rem 0.25rem;
   background: var(--ok-t-hl);
   color: #000000;
   border-radius: var(--ok-br);
+  border-radius: if(
+    supports(corner-shape: squircle) and style(--ok-cs: squircle):
+      calc(var(--ok-br) * var(--ok-cs-scale));
+    else: var(--ok-br)
+  );
+  corner-shape: var(--ok-cs);
 }
 
 iframe {
   border: var(--ok-b-0);
   border-radius: var(--ok-br);
+  border-radius: if(
+    supports(corner-shape: squircle) and style(--ok-cs: squircle):
+      calc(var(--ok-br) * var(--ok-cs-scale));
+    else: var(--ok-br)
+  );
+  corner-shape: var(--ok-cs);
   width: 100%;
 }
 
 hr {
   border: none;
-  border-bottom: var(--ok-b-0);
+  border-bottom: 1px solid var(--ok-rule);
+  margin-top: var(--ok-s-6);
 }
 
 footer {
@@ -683,7 +762,7 @@ blockquote {
   position: relative;
   margin-left: 0;
   margin-right: 0;
-  padding-left: var(--ok-s-5);
+  padding-left: var(--ok-s-3);
   color: var(--ok-tc-1);
 }
 
@@ -691,9 +770,15 @@ blockquote::before {
   position: absolute;
   height: 100%;
   content: "";
-  width: 4px;
+  width: 2px;
   left: 0;
   border-radius: var(--ok-br);
+  border-radius: if(
+    supports(corner-shape: squircle) and style(--ok-cs: squircle):
+      calc(var(--ok-br) * var(--ok-cs-scale));
+    else: var(--ok-br)
+  );
+  corner-shape: var(--ok-cs);
   background-color: var(--ok-bg-1);
 }
 
@@ -705,12 +790,31 @@ abbr {
   cursor: help;
 }
 
-/* Hover states
+/* Details
    ========================================================================== */
 
-/* https://css-tricks.com/solving-sticky-hover-states-with-media-hover-hover/ */
-@media (hover: hover) {
-  a:hover {
-    text-decoration: underline;
+/*
+Open and close <details> smoothly where the browser can animate to an
+auto height. Elsewhere they open instantly, as before.
+*/
+@supports (interpolate-size: allow-keywords) {
+  @media (prefers-reduced-motion: no-preference) {
+    details {
+      interpolate-size: allow-keywords;
+    }
+
+    details::details-content {
+      height: 0;
+      overflow: clip;
+      /* keep focus rings on fields inside from being cut off */
+      overflow-clip-margin: 4px;
+      transition:
+        height 200ms ease,
+        content-visibility 200ms ease allow-discrete;
+    }
+
+    details[open]::details-content {
+      height: auto;
+    }
   }
 }

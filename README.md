@@ -15,15 +15,27 @@ To use it, you can [download the CSS file directly](https://cdn.jsdelivr.net/gh/
 
 Note that [normalize.css](https://github.com/necolas/normalize.css/) is included in **OK.css**.
 
+### Recommended `<head>`
+
+For the best results on mobile (especially iOS Safari), pair **OK.css** with these tags:
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+```
+
+`viewport-fit=cover` lets the page background extend under the notch and home indicator, and **OK.css** pads the body so your content stays inside the safe area. The `theme-color` values match the default light and dark backgrounds (`--ok-bg-0`); update them if you change it.
+
 ### Modular imports
 
 If you don't need all of **OK.css**, you can import individual modules to reduce file size:
 
 | File | Size | Description |
 |------|------|-------------|
-| `ok.min.css` | ~19 KB | Full framework (includes everything) |
-| `core.min.css` | ~7 KB | Typography, colors, dark mode, code blocks, links, lists, images |
-| `forms.min.css` | ~12 KB | Inputs, selects, textareas, buttons (requires `core.min.css`) |
+| `ok.min.css` | ~24 KB | Full framework (includes everything) |
+| `core.min.css` | ~9 KB | Typography, colors, dark mode, code blocks, links, lists, images |
+| `forms.min.css` | ~14 KB | Inputs, selects, textareas, buttons (requires `core.min.css`) |
 | `tables.min.css` | ~1 KB | Table styling (requires `core.min.css`) |
 
 **Example: Content-only site (documentation, blog, markdown)**
@@ -51,6 +63,8 @@ If you don't need all of **OK.css**, you can import individual modules to reduce
 Install dependencies with `yarn install`.
 
 You can start a local server with `yarn start`. By default, the page will be available at `http://localhost:5000`.
+
+To tune styles visually, run `yarn playground` and open `http://localhost:4321/playground/`. It compares the latest release (before) with your live `src/` files (after), side by side or with a before/after wipe. [DialKit](https://www.dialkit.dev) controls let you adjust type, spacing, colors and links on the "after" side, switch between light and dark, and turn on a baseline grid or element outlines. **Copy CSS** puts the tuned values on your clipboard. Pass a git ref to compare against something else, for example `yarn playground v1.2.3`.
 
 Make updates to the CSS files in `./src/` and run `yarn build` to create minified versions in `./dist/`:
 

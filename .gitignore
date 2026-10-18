@@ -2,3 +2,6 @@ node_modules
 ignore
 _site
 .env
+taste
+CLAUDE.local.md
+playground/baseline
