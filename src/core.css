@@ -789,3 +789,32 @@ dd {
 abbr {
   cursor: help;
 }
+
+/* Details
+   ========================================================================== */
+
+/*
+Open and close <details> smoothly where the browser can animate to an
+auto height. Elsewhere they open instantly, as before.
+*/
+@supports (interpolate-size: allow-keywords) {
+  @media (prefers-reduced-motion: no-preference) {
+    details {
+      interpolate-size: allow-keywords;
+    }
+
+    details::details-content {
+      height: 0;
+      overflow: clip;
+      /* keep focus rings on fields inside from being cut off */
+      overflow-clip-margin: 4px;
+      transition:
+        height 200ms ease,
+        content-visibility 200ms ease allow-discrete;
+    }
+
+    details[open]::details-content {
+      height: auto;
+    }
+  }
+}
