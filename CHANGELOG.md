@@ -1,3 +1,15 @@
+# v2.1.1 (Sun Oct 18 2026)
+
+#### 🐛 Bug Fix
+
+- Support right-to-left languages and put OK.css in a cascade layer [#33](https://github.com/andrewh0/okcss/pull/33) ([@andrewh0](https://github.com/andrewh0))
+
+#### Authors: 1
+
+- Andrew Ho ([@andrewh0](https://github.com/andrewh0))
+
+---
+
 # v2.1.0 (Sun Oct 18 2026)
 
 #### 🚀 Enhancement
