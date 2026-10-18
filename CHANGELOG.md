@@ -1,3 +1,20 @@
+# v2.1.0 (Sun Oct 18 2026)
+
+#### 🚀 Enhancement
+
+- Refined typography, mobile Safari support and squircle corners [#32](https://github.com/andrewh0/okcss/pull/32) ([@andrewh0](https://github.com/andrewh0))
+
+#### 🐛 Bug Fix
+
+- Fix dead image links on demo page [#31](https://github.com/andrewh0/okcss/pull/31) ([@andrewh0](https://github.com/andrewh0))
+- Fix versioning workflow and major version bump [#28](https://github.com/andrewh0/okcss/pull/28) ([@andrewh0](https://github.com/andrewh0))
+
+#### Authors: 1
+
+- Andrew Ho ([@andrewh0](https://github.com/andrewh0))
+
+---
+
 # v2.0.0 (Fri Jan 23 2026)
 
 #### 💥 Breaking Change
