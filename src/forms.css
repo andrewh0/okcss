@@ -288,7 +288,7 @@ input[type="month"]::before,
 input[type="time"]::before,
 input[type="date"]::before {
   position: absolute;
-  right: 0;
+  inset-inline-end: 0;
   top: 0;
   background-image: var(--ok-down-0);
   background-repeat: no-repeat;
@@ -310,7 +310,7 @@ input[type="date"]:disabled::before {
 input::-webkit-calendar-picker-indicator {
   position: absolute;
   top: 0;
-  right: 0;
+  inset-inline-end: 0;
   background-color: transparent;
   cursor: pointer;
   padding: 0;
@@ -455,8 +455,12 @@ select:not([multiple]) {
   background-repeat: no-repeat, repeat;
   background-position: right 0.2em top 50%;
   background-size: 2em auto;
-  padding-right: 2.5em;
+  padding-inline-end: 2.5em;
   height: 2.5rem;
+}
+
+select:not([multiple]):dir(rtl) {
+  background-position: left 0.2em top 50%;
 }
 
 select:not([multiple]):disabled {

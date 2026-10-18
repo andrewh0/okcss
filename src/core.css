@@ -643,7 +643,7 @@ a mark {
 
 ul,
 ol {
-  padding-left: 1.25rem; /* 20 */
+  padding-inline-start: 1.25rem; /* 20 */
 }
 
 li::marker {
@@ -651,12 +651,12 @@ li::marker {
 }
 
 nav ul {
-  padding-left: 0;
+  padding-inline-start: 0;
 }
 
 nav ul li {
   display: inline;
-  margin-right: 1em;
+  margin-inline-end: 1em;
 }
 
 li p {
@@ -683,8 +683,7 @@ li p + p {
 img,
 video,
 audio {
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline: auto;
 }
 
 img {
@@ -760,9 +759,8 @@ footer {
 
 blockquote {
   position: relative;
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: var(--ok-s-3);
+  margin-inline: 0;
+  padding-inline-start: var(--ok-s-3);
   color: var(--ok-tc-1);
 }
 
@@ -771,7 +769,7 @@ blockquote::before {
   height: 100%;
   content: "";
   width: 2px;
-  left: 0;
+  inset-inline-start: 0;
   border-radius: var(--ok-br);
   border-radius: if(
     supports(corner-shape: squircle) and style(--ok-cs: squircle):
@@ -783,7 +781,7 @@ blockquote::before {
 }
 
 dd {
-  padding-left: var(--ok-s-5);
+  padding-inline-start: var(--ok-s-5);
 }
 
 abbr {

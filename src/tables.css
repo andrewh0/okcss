@@ -16,8 +16,7 @@ table {
   allow sticky header and footer
   */
   display: table;
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline: auto;
   white-space: nowrap;
   margin-bottom: var(--ok-s-4);
 }
@@ -54,7 +53,7 @@ tfoot tr {
 
 td,
 th {
-  text-align: left;
+  text-align: start;
   padding: 0.5rem;
 }
 
