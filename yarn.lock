@@ -829,6 +829,11 @@ detect-libc@^2.0.3:
   resolved "https://registry.yarnpkg.com/detect-libc/-/detect-libc-2.1.2.tgz#689c5dcdc1900ef5583a4cb9f6d7b473742074ad"
   integrity sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==
 
+dialkit@2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/dialkit/-/dialkit-2.0.2.tgz#91b229a05fa97d2e5167028771d6680d01d862a5"
+  integrity sha512-D5ZFLBhcB8WVxI6Q8e7HuPPA4SKQBPfLHpvgZQ5V0ZrqohHjYjTR5JoLfXSCeN8tKvUdemyGnVHy/3EtsaliUw==
+
 diff@^4.0.1:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/diff/-/diff-4.0.2.tgz#60f3aecb89d5fae520c11aa19efc2bb982aade7d"

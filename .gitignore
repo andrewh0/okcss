@@ -4,3 +4,4 @@ _site
 .env
 taste
 CLAUDE.local.md
+playground/baseline

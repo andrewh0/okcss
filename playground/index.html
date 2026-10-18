@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OK.css playground</title>
+    <link rel="stylesheet" href="/node_modules/dialkit/dist/vanilla/styles.css" />
+    <link rel="stylesheet" href="./playground.css" />
+  </head>
+  <body>
+    <main class="stage">
+      <header class="labels">
+        <span class="label" data-side="before">Before · <b id="before-ref">release</b> <span id="cpl-before"></span></span>
+        <span class="label" data-side="after">After · <b>src/</b> <span id="cpl-after"></span> <span id="after-note"></span></span>
+      </header>
+      <div class="panes" id="panes">
+        <section class="pane" data-side="before"><iframe title="Before" id="frame-before"></iframe></section>
+        <section class="pane" data-side="after"><iframe title="After" id="frame-after"></iframe></section>
+        <div class="wipe-handle" id="wipe-handle" aria-hidden="true"></div>
+      </div>
+    </main>
+    <aside class="dials" id="dials"></aside>
+    <script src="/node_modules/dialkit/dist/vanilla/browser.global.js"></script>
+    <script src="./playground.js"></script>
+  </body>
+</html>

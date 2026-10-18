@@ -64,6 +64,8 @@ Install dependencies with `yarn install`.
 
 You can start a local server with `yarn start`. By default, the page will be available at `http://localhost:5000`.
 
+To tune styles visually, run `yarn playground` and open `http://localhost:4321/playground/`. It compares the latest release (before) with your live `src/` files (after), side by side or with a before/after wipe. [DialKit](https://www.dialkit.dev) controls let you adjust type, spacing, colors and links on the "after" side, switch between light and dark, and turn on a baseline grid or element outlines. **Copy CSS** puts the tuned values on your clipboard. Pass a git ref to compare against something else, for example `yarn playground v1.2.3`.
+
 Make updates to the CSS files in `./src/` and run `yarn build` to create minified versions in `./dist/`:
 
 - `src/core.css` - Typography, colors, dark mode, normalize, code, links, lists, media
