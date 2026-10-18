@@ -1,7 +1,7 @@
 /*
  * OK.css playground: compare the latest release ("before") with live src/ ("after").
- * The dials only affect "after". At their defaults they reproduce OK.css exactly,
- * so any visible difference comes from src/ edits or dial changes.
+ * The dials only affect "after". At their defaults they reproduce src/ exactly,
+ * so any visible difference comes from dial changes.
  */
 (() => {
   const { createDialRoot, createDialKit } = window.DialKit;
@@ -206,14 +206,15 @@
       buttonHover: "#4788ff",
       highlight: "#ffcf30",
     },
-    loadRefined: { type: "action", label: "Load refined prototype" },
     loadButterick: { type: "action", label: "Load Butterick rules" },
     loadMinimal: { type: "action", label: "Load Obsidian Minimal" },
     copyCss: { type: "action", label: "Copy CSS" },
     resetAll: { type: "action", label: "Reset to OK.css" },
   };
 
-  // Refined direction: plain values that land on whole pixels.
+  // The refined direction, now shipped in src/. Its values become the control defaults
+  // below, so "Reset to OK.css" and untouched dials both reproduce src/ exactly.
+  // Plain values that land on whole pixels.
   // Type (size / line): h1 30/36, h2 20/26, h3 16/20, body 16/26, small/code 14/24.
   // Spacing: 4 · 8 · 16 · 20 · 24 · 32 · 40 · 56px (matches the original prototype). OK.css colors with softer body text,
   // blue links always underlined (thin, thicker on hover), pretty/balanced wrapping.
@@ -256,6 +257,15 @@
     spacing: { measure: 67, paragraph: 28, beforeH2: 32, afterH2: 8, beforeH3: 32, afterH3: 8, titleToDate: 8, titleBlock: 28, listItems: 2, beforeHr: 28, afterHr: 28 },
     prose: { markerColor: "muted" },
   };
+  // Make the refined values the control defaults (sliders: first entry; selects: default).
+  for (const [folder, vals] of Object.entries(REFINED)) {
+    for (const [key, value] of Object.entries(vals)) {
+      const def = config[folder][key];
+      if (Array.isArray(def)) def[0] = value;
+      else if (def && typeof def === "object" && "default" in def) def.default = value;
+      else config[folder][key] = value;
+    }
+  }
   const mergeDeep = (a, b) => {
     const out = { ...a };
     for (const [k, v] of Object.entries(b)) out[k] = v && typeof v === "object" && !Array.isArray(v) ? mergeDeep(a[k] || {}, v) : v;
@@ -587,9 +597,8 @@ a:hover { text-decoration-color: currentColor; }
     id: "okcss-playground",
     persist: true,
     onAction: (action) => {
-      if (action === "loadRefined") kit.setValues(mergeDeep(styleDefaults(), REFINED));
-      if (action === "loadButterick") kit.setValues(mergeDeep(mergeDeep(styleDefaults(), REFINED), BUTTERICK));
-      if (action === "loadMinimal") kit.setValues(mergeDeep(mergeDeep(styleDefaults(), REFINED), MINIMAL));
+      if (action === "loadButterick") kit.setValues(mergeDeep(styleDefaults(), BUTTERICK));
+      if (action === "loadMinimal") kit.setValues(mergeDeep(styleDefaults(), MINIMAL));
       if (action === "copyCss") copyCss();
       if (action === "resetAll") kit.setValues(styleDefaults());
     },
