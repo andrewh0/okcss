@@ -81,16 +81,16 @@
           </p>
           <ul>
             <li>
-              <b>Core</b> (<code>core.min.css</code>, ~7 KB) — Typography,
+              <b>Core</b> (<code>core.min.css</code>, ~9 KB) — Typography,
               colors, dark mode, normalize, code blocks, links, lists, images.
               Perfect for documentation, blogs, and markdown.
             </li>
             <li>
-              <b>Forms</b> (<code>forms.min.css</code>, ~12 KB) — Inputs,
+              <b>Forms</b> (<code>forms.min.css</code>, ~9 KB) — Inputs,
               selects, textareas, buttons. Requires core.
             </li>
             <li>
-              <b>Tables</b> (<code>tables.min.css</code>, ~1 KB) — Table
+              <b>Tables</b> (<code>tables.min.css</code>, &lt;1 KB) — Table
               styling with sticky headers. Requires core.
             </li>
           </ul>
@@ -132,15 +132,13 @@
               toggles <b>dark and light</b> themes automatically based on
               browser or system settings.
             </li>
-          </ul>
-          <h3>Limitations</h3>
-          <ul>
-            <li>Right-to-left languages may not be supported well.</li>
-            <li>There is limited support for Internet Explorer.</li>
             <li>
-              Less commonly used HTML tags like
-              <code>&lt;progress&gt;</code> and <code>&lt;meter&gt;</code> are
-              not styled.
+              stays out of your way: its rules sit in a cascade layer, so
+              your own CSS always wins.
+            </li>
+            <li>
+              supports <b>right-to-left</b> languages. Add
+              <code>dir="rtl"</code> to your <code>&lt;html&gt;</code> tag.
             </li>
           </ul>
         </section>

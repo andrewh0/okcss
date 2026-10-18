@@ -14,11 +14,16 @@ else
   sed -i "s/OK.css v[0-9]*\.[0-9]*\.[0-9]*/OK.css v$VERSION/" src/tables.css
 fi
 
+# Browsers that support :has() and :dir(), which OK.css relies on.
+# Older targets make lightningcss add -ms- prefixes and rewrite logical
+# properties and :dir() into long :lang() lists.
+TARGETS='chrome >= 120, edge >= 120, firefox >= 121, safari >= 16.4, ios_saf >= 16.4, samsung >= 25'
+
 # Build bundled ok.min.css by concatenating source files
 # Note: Cannot use --bundle because core.css has external @import that lightningcss tries to resolve
-cat src/core.css src/forms.css src/tables.css | npx lightningcss --minify --targets '>= 0.25%' -o dist/ok.min.css
+cat src/core.css src/forms.css src/tables.css | npx lightningcss --minify --targets "$TARGETS" -o dist/ok.min.css
 
 # Build individual minified files for selective imports
-npx lightningcss --minify --targets '>= 0.25%' src/core.css -o dist/core.min.css
-npx lightningcss --minify --targets '>= 0.25%' src/forms.css -o dist/forms.min.css
-npx lightningcss --minify --targets '>= 0.25%' src/tables.css -o dist/tables.min.css
+npx lightningcss --minify --targets "$TARGETS" src/core.css -o dist/core.min.css
+npx lightningcss --minify --targets "$TARGETS" src/forms.css -o dist/forms.min.css
+npx lightningcss --minify --targets "$TARGETS" src/tables.css -o dist/tables.min.css
