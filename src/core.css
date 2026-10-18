@@ -640,6 +640,11 @@ li p {
   margin-bottom: 0;
 }
 
+/* a list item made only of small text (e.g. footnotes) gets a matching marker */
+li:has(> small:only-child)::marker {
+  font-size: var(--ok-fs-5);
+}
+
 /*
 margin-top instead of margin-bottom to add space when
 a <ul> or <ol> is added as a nested list.
