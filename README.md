@@ -33,9 +33,9 @@ If you don't need all of **OK.css**, you can import individual modules to reduce
 
 | File | Size | Description |
 |------|------|-------------|
-| `ok.min.css` | ~19 KB | Full framework (includes everything) |
-| `core.min.css` | ~7 KB | Typography, colors, dark mode, code blocks, links, lists, images |
-| `forms.min.css` | ~12 KB | Inputs, selects, textareas, buttons (requires `core.min.css`) |
+| `ok.min.css` | ~24 KB | Full framework (includes everything) |
+| `core.min.css` | ~9 KB | Typography, colors, dark mode, code blocks, links, lists, images |
+| `forms.min.css` | ~14 KB | Inputs, selects, textareas, buttons (requires `core.min.css`) |
 | `tables.min.css` | ~1 KB | Table styling (requires `core.min.css`) |
 
 **Example: Content-only site (documentation, blog, markdown)**

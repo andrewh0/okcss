@@ -221,17 +221,17 @@ template {
   /* buttons */
   --ok-fw-1: 600;
   /* bold */
-  --ok-fw-2: 700;
+  --ok-fw-2: 600;
   /* headings */
-  --ok-fw-3: 700;
+  --ok-fw-3: 600;
 
   /* font-size */
-  --ok-fs-0: 2.5rem; /* 40 */
-  --ok-fs-1: 2rem; /* 32 */
-  --ok-fs-2: 1.5rem; /* 24 */
-  --ok-fs-3: 1.25rem; /* 20 */
+  --ok-fs-0: 1.875rem; /* 30 */
+  --ok-fs-1: 1.25rem; /* 20 */
+  --ok-fs-2: 1rem; /* 16 */
+  --ok-fs-3: 1rem; /* 16 */
   --ok-fs-4: 1rem; /* 16 */
-  --ok-fs-5: 0.75rem; /* 12 */
+  --ok-fs-5: 0.875rem; /* 14 */
 
   /* border-radius */
   --ok-br: 0.25rem;
@@ -253,15 +253,18 @@ template {
   /* ================================== */
 
   /* line heights */
-  --ok-lh-body: 1.5;
-  --ok-lh-heading: 1.25;
+  /* multipliers chosen to land on whole pixels at the default sizes */
+  --ok-lh-body: 1.625; /* 16/26 */
+  --ok-lh-heading: 1.25; /* h3–h6: 16/20; h1 and h2 set their own below */
+  /* small text, captions and code: 14/24 */
+  --ok-lh-small: 1.5rem;
 
   /* text highlight background color */
   --ok-t-hl: #ffcf30;
 
   /* button backgrounds */
   --ok-accent-0: #3e67fa;
-  --ok-accent-1: #4788ff;
+  --ok-accent-1: #2c4ee0;
 
   /* link color */
   --ok-tc-accent: #3173de;
@@ -269,12 +272,14 @@ template {
   /* code color */
   --ok-tc-code: #c23a30;
 
-  /* primary text color */
+  /* headings, bold text */
   --ok-tc-0: #000000;
+  /* body text, slightly softer than headings */
+  --ok-tc-body: #202020;
   /* secondary text color */
   --ok-tc-1: #747474;
   /* tertiary text color (for disabled fields, placeholder text) */
-  --ok-tc-2: #848484;
+  --ok-tc-2: #767676;
 
   /* background color */
   --ok-bg-0: #ffffff;
@@ -282,9 +287,11 @@ template {
   --ok-bg-2: #cccccc;
 
   /* border */
-  --ok-b-0: 1px solid #cbcbcb;
+  --ok-b-0: 1px solid #949494;
   /* border hover */
   --ok-b-1: 1px solid #848484;
+  /* horizontal rules */
+  --ok-rule: #cbcbcb;
 
   /*
   down arrow for dropdown menu input
@@ -292,26 +299,37 @@ template {
   */
   --ok-down-0: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6h0l4-4h1s0 0 0 0v1-1L6 7s0 0 0 0L1 2h1l4 4z' fill='%23747474'/%3E%3C/svg%3E");
   /* fill matches --ok-tc-2 for disabled states */
-  --ok-down-1: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6h0l4-4h1s0 0 0 0v1-1L6 7s0 0 0 0L1 2h1l4 4z' fill='%23848484'/%3E%3C/svg%3E");
+  --ok-down-1: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6h0l4-4h1s0 0 0 0v1-1L6 7s0 0 0 0L1 2h1l4 4z' fill='%23767676'/%3E%3C/svg%3E");
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --ok-tc-accent: #5c9aff;
-    --ok-tc-code: #ed5853;
-    --ok-tc-0: #ffffff;
-    --ok-tc-1: #ababab;
-    --ok-tc-2: #929292;
+    /*
+    Dark mode has its own values: light text on black looks brighter than the
+    same values reversed, so neutrals come down, and saturated colors keep their
+    lightness and hue but lose some saturation. Every text pair meets WCAG AA.
+    */
+    --ok-tc-accent: #719ce2;
+    --ok-tc-code: #d56f67;
+    --ok-tc-0: #f2f2f2;
+    --ok-tc-body: #b8b8b8;
+    --ok-tc-1: #8c8c8c;
+    --ok-tc-2: #7a7a7a;
 
     --ok-bg-0: #000000;
     --ok-bg-1: #212121;
     --ok-bg-2: #3e3e3e;
 
-    --ok-b-0: 1px solid #747474;
-    --ok-b-1: 1px solid #929292;
+    --ok-b-0: 1px solid #636363;
+    --ok-b-1: 1px solid #868686;
+    --ok-rule: #747474;
 
-    --ok-down-0: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6h0l4-4h1s0 0 0 0v1-1L6 7s0 0 0 0L1 2h1l4 4z' fill='%23ababab'/%3E%3C/svg%3E");
-    --ok-down-1: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6h0l4-4h1s0 0 0 0v1-1L6 7s0 0 0 0L1 2h1l4 4z' fill='%23929292'/%3E%3C/svg%3E");
+    --ok-accent-0: #4667c9;
+    --ok-accent-1: #4b6dcf;
+    --ok-t-hl: #e5c569;
+
+    --ok-down-0: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6h0l4-4h1s0 0 0 0v1-1L6 7s0 0 0 0L1 2h1l4 4z' fill='%238c8c8c'/%3E%3C/svg%3E");
+    --ok-down-1: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6h0l4-4h1s0 0 0 0v1-1L6 7s0 0 0 0L1 2h1l4 4z' fill='%237a7a7a'/%3E%3C/svg%3E");
   }
 }
 
@@ -336,7 +354,7 @@ html {
   line-sizing: normal;
   line-height: var(--ok-lh-body);
   font-weight: var(--ok-fw-0);
-  color: var(--ok-tc-0);
+  color: var(--ok-tc-body);
   background-color: var(--ok-bg-0);
 
   -webkit-font-smoothing: antialiased;
@@ -379,7 +397,7 @@ body {
     max(var(--ok-s-3), env(safe-area-inset-right))
     max(var(--ok-s-3), env(safe-area-inset-bottom))
     max(var(--ok-s-3), env(safe-area-inset-left));
-  max-width: 80ch;
+  max-width: 65ch;
   margin: auto;
 }
 
@@ -409,8 +427,20 @@ h5 {
 }
 h6 {
   font-size: var(--ok-fs-5);
-  text-transform: uppercase;
   font-weight: var(--ok-fw-1);
+  color: var(--ok-tc-1);
+}
+
+/* h6 stays muted (see above) */
+h1,
+h2,
+h3,
+h4,
+h5,
+strong,
+b,
+dt {
+  color: var(--ok-tc-0);
 }
 
 h1,
@@ -421,8 +451,27 @@ h5,
 h6 {
   line-height: var(--ok-lh-heading);
   font-weight: var(--ok-fw-3);
+  margin-top: var(--ok-s-5);
+  margin-bottom: var(--ok-s-2);
+  text-wrap: balance;
+}
+
+h1 {
+  line-height: 1.2; /* 30/36 */
+  letter-spacing: -0.02em;
   margin-top: var(--ok-s-6);
   margin-bottom: var(--ok-s-3);
+}
+
+h2 {
+  line-height: 1.3; /* 20/26 */
+  margin-top: 3.5rem; /* 56 */
+  margin-bottom: var(--ok-s-3);
+}
+
+/* a title followed by its date or byline */
+header > h1:has(+ *) {
+  margin-bottom: var(--ok-s-1);
 }
 
 h1 + *,
@@ -437,6 +486,14 @@ hr + * {
 
 p {
   font-size: var(--ok-fs-4);
+}
+
+/* avoid a lone word on the last line */
+p,
+li,
+blockquote,
+figcaption {
+  text-wrap: pretty;
 }
 
 small {
@@ -526,7 +583,7 @@ ul:last-child {
 
 code,
 samp {
-  padding: 0.2em 0.4em;
+  padding: 0.125rem 0.25rem;
   color: var(--ok-tc-code);
 }
 
@@ -539,7 +596,7 @@ samp {
   If 1rem is 16px, font-size is 14px.
   */
   font-size: 87.5%;
-  line-height: var(--ok-lh-body);
+  line-height: var(--ok-lh-small);
   background-color: var(--ok-bg-1);
   border-radius: var(--ok-br);
   border-radius: if(
@@ -603,9 +660,17 @@ kbd {
    ========================================================================== */
 
 a {
-  text-decoration: none;
   color: var(--ok-tc-accent);
-  font-weight: var(--ok-fw-1);
+  font-weight: 500;
+  /* a thin underline, high enough to cut through descenders, that thickens on hover */
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: text-decoration-thickness 120ms ease;
+}
+
+a:hover {
+  text-decoration-thickness: 1.5px;
 }
 
 a:visited {
@@ -623,7 +688,11 @@ a mark {
 
 ul,
 ol {
-  padding-left: var(--ok-s-5);
+  padding-left: 1.25rem; /* 20 */
+}
+
+li::marker {
+  color: var(--ok-tc-1);
 }
 
 nav ul {
@@ -651,7 +720,7 @@ a <ul> or <ol> is added as a nested list.
 */
 li,
 li p + p {
-  margin-top: 0.5em;
+  margin-top: var(--ok-s-1);
 }
 
 /* Images, figures, and media
@@ -691,8 +760,16 @@ figcaption {
   color: var(--ok-tc-1);
 }
 
+small,
+time,
+figcaption,
+footer,
+kbd {
+  line-height: var(--ok-lh-small);
+}
+
 mark {
-  padding: 0.2em 0.4em;
+  padding: 0.125rem 0.25rem;
   background: var(--ok-t-hl);
   color: #000000;
   border-radius: var(--ok-br);
@@ -718,7 +795,8 @@ iframe {
 
 hr {
   border: none;
-  border-bottom: var(--ok-b-0);
+  border-bottom: 1px solid var(--ok-rule);
+  margin-top: var(--ok-s-6);
 }
 
 footer {
@@ -730,7 +808,7 @@ blockquote {
   position: relative;
   margin-left: 0;
   margin-right: 0;
-  padding-left: var(--ok-s-5);
+  padding-left: var(--ok-s-3);
   color: var(--ok-tc-1);
 }
 
@@ -738,7 +816,7 @@ blockquote::before {
   position: absolute;
   height: 100%;
   content: "";
-  width: 4px;
+  width: 2px;
   left: 0;
   border-radius: var(--ok-br);
   border-radius: if(
