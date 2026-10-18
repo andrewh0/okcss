@@ -34,14 +34,6 @@ body {
 }
 
 /**
- * Render the `main` element consistently in IE.
- */
-
-main {
-  display: block;
-}
-
-/**
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
@@ -55,14 +47,12 @@ h1 {
    ========================================================================== */
 
 /**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
+ * Add the correct box sizing in Firefox.
  */
 
 hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
+  box-sizing: content-box;
+  height: 0;
 }
 
 /**
@@ -79,23 +69,12 @@ pre {
    ========================================================================== */
 
 /**
- * Remove the gray background on active links in IE 10.
- */
-
-a {
-  background-color: transparent;
-}
-
-/**
- * 1. Remove the bottom border in Chrome 57-
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ * Add the correct text decoration in Chrome, Opera, and Safari.
  */
 
 abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
   -webkit-text-decoration: underline dotted;
-  text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted;
 }
 
 /**
@@ -148,27 +127,8 @@ sup {
   top: -0.5em;
 }
 
-/* Embedded content
-   ========================================================================== */
-
-/**
- * Remove the border on images inside links in IE 10.
- */
-
-img {
-  border-style: none;
-}
-
 /* Interactive
    ========================================================================== */
-
-/*
- * Add the correct display in Edge, IE 10+, and Firefox.
- */
-
-details {
-  display: block;
-}
 
 /*
  * Add the correct display in all browsers.
@@ -182,15 +142,7 @@ summary {
    ========================================================================== */
 
 /**
- * Add the correct display in IE 10+.
- */
-
-template {
-  display: none;
-}
-
-/**
- * Add the correct display in IE 10.
+ * Keep `hidden` working on elements this framework sets `display` on.
  */
 
 [hidden] {
@@ -351,7 +303,6 @@ template {
 
 html {
   font-family: var(--ok-sans);
-  line-sizing: normal;
   line-height: var(--ok-lh-body);
   font-weight: var(--ok-fw-0);
   color: var(--ok-tc-body);
@@ -361,10 +312,14 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
-  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 @supports (font-variation-settings: normal) {
@@ -696,7 +651,6 @@ li::marker {
 }
 
 nav ul {
-  text-decoration: none;
   padding-left: 0;
 }
 
@@ -834,14 +788,4 @@ dd {
 
 abbr {
   cursor: help;
-}
-
-/* Hover states
-   ========================================================================== */
-
-/* https://css-tricks.com/solving-sticky-hover-states-with-media-hover-hover/ */
-@media (hover: hover) {
-  a:hover {
-    text-decoration: underline;
-  }
 }

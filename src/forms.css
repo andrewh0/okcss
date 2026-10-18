@@ -26,24 +26,11 @@ textarea {
 }
 
 /**
- * Show the overflow in IE.
- * 1. Show the overflow in Edge.
- */
-
-button,
-input {
-  /* 1 */
-  overflow: visible;
-}
-
-/**
- * Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 1. Remove the inheritance of text transform in Firefox.
+ * Remove the inheritance of text transform in Firefox.
  */
 
 button,
 select {
-  /* 1 */
   text-transform: none;
 }
 
@@ -90,19 +77,12 @@ fieldset {
 }
 
 /**
- * 1. Correct the text wrapping in Edge and IE.
- * 2. Correct the color inheritance from `fieldset` elements in IE.
- * 3. Remove the padding so developers are not caught out when they zero out
- *    `fieldset` elements in all browsers.
+ * Remove the padding so developers are not caught out when they zero out
+ * `fieldset` elements in all browsers.
  */
 
 legend {
-  box-sizing: border-box; /* 1 */
-  color: inherit; /* 2 */
-  display: table; /* 1 */
-  max-width: 100%; /* 1 */
-  padding: 0; /* 3 */
-  white-space: normal; /* 1 */
+  padding: 0;
 }
 
 /**
@@ -111,25 +91,6 @@ legend {
 
 progress {
   vertical-align: baseline;
-}
-
-/**
- * Remove the default vertical scrollbar in IE 10+.
- */
-
-textarea {
-  overflow: auto;
-}
-
-/**
- * 1. Add the correct box sizing in IE 10.
- * 2. Remove the padding in IE 10.
- */
-
-[type="checkbox"],
-[type="radio"] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
 }
 
 /**
@@ -259,43 +220,8 @@ textarea:disabled {
   color: var(--ok-tc-2);
 }
 
-input::-moz-placeholder,
-textarea::-moz-placeholder {
-  color: var(--ok-tc-2);
-}
-
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
-  color: var(--ok-tc-2);
-}
-
-input::-ms-input-placeholder,
-textarea::-ms-input-placeholder {
-  color: var(--ok-tc-2);
-}
-
 input::placeholder,
 textarea::placeholder {
-  color: var(--ok-tc-2);
-}
-
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-  color: var(--ok-tc-2);
-}
-
-input::-moz-placeholder,
-textarea::-moz-placeholder {
-  color: var(--ok-tc-2);
-}
-
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
-  color: var(--ok-tc-2);
-}
-
-input::-ms-input-placeholder,
-textarea::-ms-input-placeholder {
   color: var(--ok-tc-2);
 }
 
@@ -306,11 +232,6 @@ input::-webkit-clear-button,
 input::-webkit-inner-spin-button,
 input::-webkit-search-cancel-button,
 input::-webkit-search-results-button {
-  display: none;
-}
-
-input::-ms-clear,
-input::-ms-reveal {
   display: none;
 }
 
@@ -353,7 +274,6 @@ input[type="date"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  position: relative;
 }
 
 input[type="datetime-local"]::before,
@@ -405,7 +325,6 @@ input[type="range"] {
   -moz-appearance: none;
   appearance: none;
   margin: 0;
-  outline: none;
   cursor: pointer;
   padding: 0;
   vertical-align: middle;
@@ -453,29 +372,6 @@ input[type="range"]::-moz-range-track {
   box-sizing: border-box;
 }
 
-input[type="range"]::-ms-track {
-  cursor: pointer;
-  -ms-appearance: none;
-  border-radius: var(--ok-br);
-  border-radius: if(
-    supports(corner-shape: squircle) and style(--ok-cs: squircle):
-      calc(var(--ok-br) * var(--ok-cs-scale));
-    else: var(--ok-br)
-  );
-  corner-shape: var(--ok-cs);
-  border: var(--ok-b-0);
-  background-color: var(--ok-bg-1);
-  background-image: linear-gradient(var(--ok-bg-1), var(--ok-bg-1));
-  width: 100%;
-  height: 0.5rem;
-  color: transparent;
-  box-sizing: border-box;
-}
-
-input[type="range"]::-ms-fill-lower {
-  background: transparent;
-}
-
 input[type="range"]::-webkit-slider-thumb {
   cursor: pointer;
   -webkit-appearance: none;
@@ -497,25 +393,12 @@ input[type="range"]::-moz-range-thumb {
   width: 1.5rem;
   height: 1.5rem;
 }
-input[type="range"]::-ms-thumb {
-  cursor: pointer;
-  -ms-appearance: none;
-  border-radius: 50%;
-  background-color: var(--ok-accent-0);
-  width: 1.5rem;
-  height: 1.5rem;
-  transform: translateY(0.25rem);
-}
 
 input[type="range"]:focus:not(:disabled)::-webkit-slider-thumb {
   background-color: var(--ok-accent-1);
 }
 
 input[type="range"]:focus:not(:disabled)::-moz-range-thumb {
-  background-color: var(--ok-accent-1);
-}
-
-input[type="range"]:focus:not(:disabled)::-ms-thumb {
   background-color: var(--ok-accent-1);
 }
 
@@ -531,20 +414,11 @@ input[type="range"]:disabled::-moz-range-track {
   cursor: default;
 }
 
-input[type="range"]:disabled::-ms-track {
-  cursor: default;
-}
-
 input[type="range"]:disabled::-webkit-slider-thumb {
   background-color: var(--ok-bg-2);
   cursor: default;
 }
 input[type="range"]:disabled::-moz-range-thumb {
-  background-color: var(--ok-bg-2);
-  cursor: default;
-}
-
-input[type="range"]:disabled::-ms-thumb {
   background-color: var(--ok-bg-2);
   cursor: default;
 }
@@ -579,10 +453,6 @@ select:not([multiple]) {
   height: 2.5rem;
 }
 
-select::-ms-expand {
-  display: none;
-}
-
 select:not([multiple]):disabled {
   background-image: var(--ok-down-1);
   background-color: var(--ok-bg-1);
@@ -604,7 +474,7 @@ select[multiple]:disabled {
 }
 
 select[multiple] option {
-  color: var(--ok-t-);
+  color: var(--ok-tc-0);
 }
 
 select[multiple]:disabled option {
@@ -727,10 +597,6 @@ input:not(:disabled):focus::-webkit-file-upload-button {
   }
 
   input[type="range"]:hover:not(:disabled)::-moz-range-track {
-    border: var(--ok-b-1);
-  }
-
-  input[type="range"]:hover:not(:disabled)::-ms-track {
     border: var(--ok-b-1);
   }
 
